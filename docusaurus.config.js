@@ -1,7 +1,7 @@
 module.exports = {
   title: 'My Site',
   tagline: 'The tagline of my site',
-  url: 'https://lingt-xyz.github.io',
+  url: 'https://lingt.xyz/',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'lingt-xyz', // Usually your GitHub org/user name.
