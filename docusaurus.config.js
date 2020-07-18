@@ -1,11 +1,11 @@
 module.exports = {
   title: 'My Site',
   tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://lingt-xyz.github.io',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'lingt-xyz', // Usually your GitHub org/user name.
+  projectName: 'lingt-xyz.github.io', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'My Site',
@@ -22,7 +22,7 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/lingt-xyz/lingt-xyz.github.io',
           label: 'GitHub',
           position: 'right',
         },
