@@ -95,6 +95,8 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [[rehypeKatex, {strict: false}]],
         },
         blog: {
           showReadingTime: true,
