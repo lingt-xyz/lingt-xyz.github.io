@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Ling',
-  tagline: 'The tagline of my site',
+  tagline: 'Notes for everything',
   url: 'https://lingt.xyz/',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
@@ -8,9 +8,9 @@ module.exports = {
   projectName: 'lingt-xyz.github.io', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Ling',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Logo',
         src: 'img/logo.svg',
       },
       links: [
