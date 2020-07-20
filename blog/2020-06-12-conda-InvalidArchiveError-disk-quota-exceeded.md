@@ -2,7 +2,7 @@
 title: Conda env disk quote exceeded error
 ---
 
-<!--more-->
+<!--truncate-->
 ## Problem
 When create conda virtual environment, got InvalidArchiveError because of Disk quota exceeded:
 

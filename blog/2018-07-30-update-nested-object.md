@@ -3,7 +3,7 @@ title:  Update nested object in Vue.js
 ---
 
 Update nested object in Vue.js
-<!--more-->
+<!--truncate-->
 ``` javascript
 let aiVue = null;
 let ai = something;

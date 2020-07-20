@@ -4,7 +4,7 @@ title: Install Java 8 on Debian 10
 
 Cassandra 3.11 does not work on Java 11, but Debian 10 has OpenJdk 11 installed as default.
 
-<!--more-->
+<!--truncate-->
 ## Problem
 When following the instructions of the [Cassandra installation](http://cassandra.apache.org/download/), `nodetool status` outputs the exception:
 

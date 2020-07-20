@@ -3,7 +3,7 @@ layout: post
 title:  How to install VirtualBox Guest Additions in a Debian virtual machine
 ---
 
-<!--more-->
+<!--truncate-->
 1. Open terminal and become root `su`
 2. Update APT cache: `apt-get update`
 3. Install the latest security updates: `apt upgrade`

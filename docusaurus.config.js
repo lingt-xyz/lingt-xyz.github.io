@@ -15,8 +15,14 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
+          to: 'docs/course/doc1',
+          activeBasePath: 'docs/course',
+          label: 'Docs',
+          position: 'left',
+        },
+        {
+          to: 'docs/linux/bash',
+          activeBasePath: 'docs/linux',
           label: 'Docs',
           position: 'left',
         },

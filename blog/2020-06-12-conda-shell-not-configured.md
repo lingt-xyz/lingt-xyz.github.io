@@ -1,8 +1,8 @@
 ---
-title: Conda env disk quote exceeded error
+title: Conda shell not configured error
 ---
 
-<!--more-->
+<!--truncate-->
 ## Problem
 When create conda virtual environment, got shell error because of unknown:
 

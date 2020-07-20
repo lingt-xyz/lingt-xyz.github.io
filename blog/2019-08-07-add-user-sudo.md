@@ -4,7 +4,7 @@ title: Granting Users Administrative Privileges
 
 After installation of Debian 10, user is not inclued in sudo group, thus cannot use `sudo` command as a non-root user as in Ubuntu.
 
-<!--more-->
+<!--truncate-->
 ## Problem
 Cannot use `sudo` command after installation of Debian 10.
 

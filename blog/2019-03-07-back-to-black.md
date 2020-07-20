@@ -4,7 +4,7 @@ title: Back to black
 
 For Ubuntu 17.10 & GDM 3.26.2
 
-<!--more-->
+<!--truncate-->
 
 ## Steps
 1. Dark Theme (i.e., Ark-Dark)

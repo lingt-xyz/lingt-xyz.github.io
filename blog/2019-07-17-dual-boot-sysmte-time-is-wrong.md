@@ -4,7 +4,7 @@ title: Dual-boot System time is wrong
 
 Debian 10 and Windows 10 system time always get wrong after reboot.
 
-<!--more-->
+<!--truncate-->
 ## Problem
 System time is wrong under dual-boot environment.
 

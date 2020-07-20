@@ -6,7 +6,7 @@ title: Link Namecheap Domain to GitHub Pages
 * By adding a CNAME file.
 * Or by changing settings.
 
-<!--more-->
+<!--truncate-->
 
 ### Config Namecheap
 * `A` record for `@` pointing to `185.199.108.153`

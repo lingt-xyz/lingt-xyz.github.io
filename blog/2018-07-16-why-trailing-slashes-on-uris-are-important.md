@@ -6,7 +6,7 @@ title: Why trailing slashes on uris are important
 
 In Unix, a trailing slash on a pathname identifies the path as pointing to a folder (aka directory). If a pathname does not have a trailing slash then it points to a file. A folder is a ‘collection’ of files.
 
-<!--more-->
+<!--truncate-->
 
 The syntax of URIs is derived from the syntax of Unix filenames, and the concept of using trailing slashes to identify ‘collection’ resources was carried over. However on the Web, the strong delineation between folders and files does not exist, frequently a ‘collection’ resource appears similar in structure and content to a normal resource (sometimes referred to as a ‘subordinate’ resource).
 

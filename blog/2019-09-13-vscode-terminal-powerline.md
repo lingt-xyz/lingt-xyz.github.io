@@ -4,7 +4,7 @@ title: Powerline fonts for Visual Studio Code terminal
 
 Error of "character not in range" after installing zsh.
 
-<!--more-->
+<!--truncate-->
 ## Problem
 After installing [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), Visual Studio Code terminal would report the error:
 

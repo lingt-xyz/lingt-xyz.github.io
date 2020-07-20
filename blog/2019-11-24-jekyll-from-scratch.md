@@ -4,7 +4,7 @@ title: Jekyll from scratch
 
 Build a Github-page hosted Jekyll static website from scratch.
 
-<!--more-->
+<!--truncate-->
 
 ## Installation
 

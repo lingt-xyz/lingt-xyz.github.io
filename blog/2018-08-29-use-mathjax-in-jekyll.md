@@ -4,7 +4,7 @@ mathjax: true
 ---
 Two things need to be done.
 
-<!--more-->
+<!--truncate-->
 
 1. Config inline mode, so we can use `$$`
     ```html

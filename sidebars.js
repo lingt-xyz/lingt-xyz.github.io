@@ -1,6 +1,7 @@
 module.exports = {
-  someSidebar: {
-    Docusaurus: ['doc1', 'doc2', 'doc3'],
-    Features: ['mdx'],
+  courses: {
+    INSE: ['course/doc1', 'course/doc2', 'course/doc3'],
+    SOEN: ['course/SOEN321', 'course/SOEN321_project'],
   },
+  linux: ["linux/Bash"]
 };
