@@ -2,9 +2,7 @@
 title: SOEN 321
 ---
 
-Winter 2019
-
-<!--more-->
+SOEN 321 Winter 2019
 
 ## Outline
 * Instructor: [Dr. Mohammad Mannan](https://users.encs.concordia.ca/~mmannan/)

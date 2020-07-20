@@ -2,10 +2,7 @@
 title: SOEN 321 Project
 ---
 
-Winter 2019
-
-
-<!--more-->
+SOEN 321 Winter 2019
 
 ## Topic 6 DNS Interception Study
 

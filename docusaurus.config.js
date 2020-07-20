@@ -17,13 +17,13 @@ module.exports = {
         {
           to: 'docs/course/doc1',
           activeBasePath: 'docs/course',
-          label: 'Docs',
+          label: 'Course',
           position: 'left',
         },
         {
           to: 'docs/linux/bash',
           activeBasePath: 'docs/linux',
-          label: 'Docs',
+          label: 'Linux',
           position: 'left',
         },
         {to: 'blog', label: 'Blog', position: 'left'},
