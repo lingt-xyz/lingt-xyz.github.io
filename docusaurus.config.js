@@ -1,3 +1,6 @@
+const remarkMath = require("remark-math");
+const rehypeKatex = require("rehype-katex");
+
 module.exports = {
   title: 'Ling',
   tagline: 'Notes for everything',
