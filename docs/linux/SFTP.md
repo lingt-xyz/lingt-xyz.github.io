@@ -1,4 +1,5 @@
 ---
+title: SFTP
 ---
 
 How to setup an SFTP server on Debian 10

@@ -1,4 +1,5 @@
 ---
+title: sed
 ---
 
 `sed`: the **s**tream **ed**itor is a text editor that performs editing operations on information coming from standard input or a file. Sed edits line-by-line and in a non-interactive way.
