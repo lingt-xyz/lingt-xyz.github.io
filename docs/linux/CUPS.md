@@ -1,4 +1,5 @@
 ---
+title: CUPS
 ---
 
 Using `CUPS` web interface to configure printers encounters `401: Forbidden` error.
