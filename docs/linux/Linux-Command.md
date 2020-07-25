@@ -1,5 +1,4 @@
 ---
-id: command
 title: GNU/Linux command
 ---
 Commands on Debian 10
