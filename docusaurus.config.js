@@ -1,5 +1,5 @@
-const remarkMath = require("remark-math");
-const rehypeKatex = require("rehype-katex");
+const math = require("remark-math");
+const katex = require("rehype-katex");
 
 module.exports = {
   title: 'Ling',
@@ -9,6 +9,14 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'lingt-xyz', // Usually your GitHub org/user name.
   projectName: 'lingt-xyz.github.io', // Usually your repo name.
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css',
+      type: 'text/css',
+      integrity: 'sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq',
+      crossorigin: 'anonymous',
+    },
+  ],
   themeConfig: {
     navbar: {
       title: 'Ling',
@@ -103,8 +111,8 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/lingt-xyz/io/tree/master/',
-          remarkPlugins: [remarkMath],
-          rehypePlugins: [[rehypeKatex, {strict: false}]],
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
         },
         blog: {
           showReadingTime: true,
