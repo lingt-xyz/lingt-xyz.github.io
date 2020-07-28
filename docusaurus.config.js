@@ -86,6 +86,11 @@ module.exports = {
       // ],
       copyright: `Copyright © ${new Date().getFullYear()} Ling. Built with Docusaurus.`,
     },
+    algolia: {
+      apiKey: 'da354ad68850303e93738bfa8160ae32',
+      indexName: 'lingt',
+      //searchParameters: {}, // Optional (if provided by Algolia)
+    },
   },
   presets: [
     [
