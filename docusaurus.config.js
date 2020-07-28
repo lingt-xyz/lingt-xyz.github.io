@@ -113,6 +113,7 @@ module.exports = {
             'https://github.com/lingt-xyz/io/tree/master/',
           remarkPlugins: [math],
           rehypePlugins: [katex],
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
