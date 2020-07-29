@@ -1,12 +1,9 @@
 ---
-layout: note
 title: PHIL 210
-comments: false
 ---
 
 Winter 2019
 
-<!--more-->
 
 ## Outline
 * [Outline]({{ site.baseurl }}/resources/note/PHIL210/outline.pdf)

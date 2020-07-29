@@ -1,11 +1,9 @@
 ---
 title: COMP 354
-layout: course
 ---
 
 Adapted from Stuart Thiel's lecture, 2018 Summer.
 
-<!--more-->
 
 <hr>
 

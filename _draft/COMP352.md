@@ -1,11 +1,9 @@
 ---
 title: COMP 352
-layout: course
 ---
 
 2017 Winter
 
-<!--more-->
 
 ## Outline
 

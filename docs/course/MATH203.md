@@ -5,7 +5,6 @@ layout: course
 
 2016 Winter
 
-<!--more-->
 ### The real number system
 <object data="{{ site.baseurl }}/assets/MATH 203/The real number system.pdf" type="application/pdf" width="100%" height="850px">
     <embed src="{{ site.baseurl }}/assets/MATH 203/The real number system.pdf" type="application/pdf">

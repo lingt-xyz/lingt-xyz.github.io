@@ -1,11 +1,9 @@
 ---
 title: COMP 361
-layout: course
 ---
 
 2017 Fall
 
-<!--more-->
 ### COMP 361
 <object data="{{ site.baseurl }}/assets/COMP 361/COMP 361.pdf" type="application/pdf" width="100%" height="850px">
     <embed src="{{ site.baseurl }}/assets/COMP 361/COMP 361.pdf" type="application/pdf">

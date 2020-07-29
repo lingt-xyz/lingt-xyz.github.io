@@ -5,7 +5,6 @@ layout: course
 
 2017 Winter
 
-<!--more-->
 ### MAST 218
 <object data="{{ site.baseurl }}/assets/MAST 218/MAST 218.pdf" type="application/pdf" width="100%" height="850px">
     <embed src="{{ site.baseurl }}/assets/MAST 218/MAST 218.pdf" type="application/pdf">

@@ -1,11 +1,9 @@
 ---
 title: COMP 376
-layout: course
 ---
 
 2018 Fall
 
-<!--more-->
 
 ## Outline
 

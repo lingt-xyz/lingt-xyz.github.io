@@ -5,7 +5,6 @@ layout: course
 
 2017 Fall
 
-<!--more-->
 ### MATH 251
 <object data="{{ site.baseurl }}/assets/MATH 251/MATH 251.pdf" type="application/pdf" width="100%" height="850px">
     <embed src="{{ site.baseurl }}/assets/MATH 251/MATH 251.pdf" type="application/pdf">

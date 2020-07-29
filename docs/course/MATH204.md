@@ -5,7 +5,6 @@ layout: course
 
 2016 Winter
 
-<!--more-->
 ### What is a Vector Space
 <object data="{{ site.baseurl }}/assets/MATH 204/VectorSpace.pdf" type="application/pdf" width="100%" height="850px">
     <embed src="{{ site.baseurl }}/assets/MATH 204/VectorSpace.pdf" type="application/pdf">

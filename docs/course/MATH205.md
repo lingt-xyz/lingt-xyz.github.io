@@ -5,7 +5,6 @@ layout: course
 
 2016 Summer
 
-<!--more-->
 ### Number Systems
 <object data="{{ site.baseurl }}/assets/MATH 205/Number Systems.pdf" type="application/pdf" width="100%" height="850px">
     <embed src="{{ site.baseurl }}/assets/MATH 205/Number Systems.pdf" type="application/pdf">
