@@ -8,7 +8,7 @@ module.exports = {
     PHIL: ['course/PHIL210']
   },
   TA: ['ta/COMP352'],
-  research: ['research/Dictionary', 'research/MathJax'],
+  research: ['research/Dictionary', 'research/MathTax'],
   language: ['language/Go', 'language/Python', 'language/C++', 'language/Compilation',  'language/GCC', 'language/Make', 'language/Container', 'language/Docker', 'language/Integration_With_PyCharm'],
   database: ['database/Cassandra', 'database/Cassandra_in_Docker'],
   linux: ["linux/Audio", "linux/Bash", "linux/CUPS", "linux/Disk", "linux/Sed", "linux/SFTP", "linux/Tar", "linux/User"]
