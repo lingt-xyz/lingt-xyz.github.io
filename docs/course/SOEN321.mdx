@@ -898,11 +898,11 @@ depend on the plaintext received from previous requests
 
 * Authenticated Diffie-Hellman (DH encrypted key exchange)
 * Shared passwod
-    * $A\rightarrow B: A,g,p,\\\{g^a \pmod p \\\}_{pwd}$
-    * $B\rightarrow A: B,\\\{g^b \pmod p \\\}_{pwd}$
-    * $A\rightarrow B: \\\{C_A\\\}_K$
-    * $B\rightarrow A: \\\{C_A, C_B\\\}_K$
-    * $A\rightarrow B: \\\{C_B\\\}_K$
+    * $A\rightarrow B: A,g,p,\{g^a \pmod p \}_{pwd}$
+    * $B\rightarrow A: B,\{g^b \pmod p \}_{pwd}$
+    * $A\rightarrow B: \{C_A\}_K$
+    * $B\rightarrow A: \{C_A, C_B\}_K$
+    * $A\rightarrow B: \{C_B\}_K$
 * Achieves:
     * Mutual authentication
     * Strong session key
