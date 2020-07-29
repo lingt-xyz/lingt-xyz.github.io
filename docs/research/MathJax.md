@@ -9,25 +9,25 @@ title: MathJax
 
 ### Plain text
 
-$$ \{x\in s\mid x\text{ is extra large}\} $$ ``` \{x\in s\mid x\text{ is extra large}\} ```
+$$\{x\in s\mid x\text{ is extra large}\}$$ ``` \{x\in s\mid x\text{ is extra large}\} ```
 
 ### Greek letters
 
-$$ \alpha, \beta, … \omega $$ ```\alpha, \beta, …, \omega```
+$$\alpha, \beta, … \omega$$ ```\alpha, \beta, …, \omega```
 
-$$ \Gamma, \Delta, …, \Omega $$ ```\Gamma, \Delta, …, \Omega```
+$$\Gamma, \Delta, …, \Omega$$ ```\Gamma, \Delta, …, \Omega```
 
 ### Fonts
 
 Use ```\mathbb``` or ```\Bbb``` for "blackboard bold"
 
-$$ \mathbb{CHNQRZ} $$ ``` \mathbb{CHNQRZ} ```
+$$\mathbb{CHNQRZ}$$ ``` \mathbb{CHNQRZ} ```
 
 ### Escape characters
 
-$$ \backslash $$ ``` \backslash ```
+$$\backslash$$ ``` \backslash ```
 
-$$ \_ $$ ``` \_ ```
+$$\_$$ ``` \_ ```
 
 ---
 
@@ -37,141 +37,141 @@ $$ \_ $$ ``` \_ ```
 
 A “group” is either a single symbol, or any formula surrounded by curly braces ```{```…```}```.
 
-$$ 10^10 $$ ``` 10^10 ```
+$$10^10$$ ``` 10^10 ```
 
-$$ 10^{10} $$ ``` 10^{10} ```
+$$10^{10}$$ ``` 10^{10} ```
 
-$$ x_i^2 $$ ``` x_i^2 ```
+$$x_i^2$$ ``` x_i^2 ```
 
-$$ x_{i^2} $$ ``` x_{i^2} ```
+$$x_{i^2}$$ ``` x_{i^2} ```
 
 
 ### Parentheses 
 
-Ordinary symbols ```()[]``` make parentheses and brackets (2+3)[4+4]. Use ```\{``` and ```\}``` for curly braces $$ \{\} $$.
+Ordinary symbols ```()[]``` make parentheses and brackets (2+3)[4+4]. Use ```\{``` and ```\}``` for curly braces$$\{\}$$.
 
-$$ \langle\rangle $$ `\langle\rangle`
+$$\langle\rangle$$ `\langle\rangle`
 
-$$ (\frac{\sqrt x}{y^3}) $$ ``` (\frac{\sqrt x}{y^3}) ```
+$$(\frac{\sqrt x}{y^3})$$ ``` (\frac{\sqrt x}{y^3}) ```
 
-$$ \left(\frac{\sqrt x}{y^3}\right) $$ ``` \left(\frac{\sqrt x}{y^3}\right) ```
+$$\left(\frac{\sqrt x}{y^3}\right)$$ ``` \left(\frac{\sqrt x}{y^3}\right) ```
 
-$$ \Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr) $$ ``` \Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr) ```
+$$\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)$$ ``` \Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr) ```
 
 ### Braces
 
-$$ \overbrace{(n - 2) + \overbrace{(n - 1) + n + (n + 1)} + (n + 2)} $$ ``` \overbrace{(n - 2) + \overbrace{(n - 1) + n + (n + 1)} + (n + 2)} ```
+$$\overbrace{(n - 2) + \overbrace{(n - 1) + n + (n + 1)} + (n + 2)}$$ ``` \overbrace{(n - 2) + \overbrace{(n - 1) + n + (n + 1)} + (n + 2)} ```
 
-$$ (n \underbrace{- 2) + (n \underbrace{- 1) + n + (n +} 1) + (n +} 2) $$ ``` (n \underbrace{- 2) + (n \underbrace{- 1) + n + (n +} 1) + (n +} 2) ```
+$$(n \underbrace{- 2) + (n \underbrace{- 1) + n + (n +} 1) + (n +} 2)$$ ``` (n \underbrace{- 2) + (n \underbrace{- 1) + n + (n +} 1) + (n +} 2) ```
 
-$$ \underbrace{a\cdot a\cdots a}_{b\text{ times}} $$ ``` \underbrace{a\cdot a\cdots a}_{b\text{ times}} ```
+$$\underbrace{a\cdot a\cdots a}_{b\text{ times}}$$ ``` \underbrace{a\cdot a\cdots a}_{b\text{ times}} ```
 
 ---
 
 ## Special symbols
 
-$$ \lt \gt \le \leq \leqq \leqslant \ge \geq \geqq \geqslant \neq $$ ``` \lt \gt \le \leq \leqq \leqslant \ge \geq \geqq \geqslant \neq ```
+$$\lt \gt \le \leq \leqq \leqslant \ge \geq \geqq \geqslant \neq$$ ``` \lt \gt \le \leq \leqq \leqslant \ge \geq \geqq \geqslant \neq ```
 
-$$ x\cdot y \times \div \pm \mp $$ ``` x\cdot y \times \div \pm \mp ```
+$$x\cdot y \times \div \pm \mp$$ ``` x\cdot y \times \div \pm \mp ```
 
-$$ \cup \cap \setminus \subset \subseteq \subsetneq \supset \in \notin \emptyset \varnothing $$ ``` \cup \cap \setminus \subset \subseteq \subsetneq \supset \in \notin \emptyset \varnothing ```
+$$\cup \cap \setminus \subset \subseteq \subsetneq \supset \in \notin \emptyset \varnothing$$ ``` \cup \cap \setminus \subset \subseteq \subsetneq \supset \in \notin \emptyset \varnothing ```
 
-$$ {n+1 \choose 2k} \binom{n+1}{2k} $$ ``` {n+1 \choose 2k} \binom{n+1}{2k} ```
+$${n+1 \choose 2k} \binom{n+1}{2k}$$ ``` {n+1 \choose 2k} \binom{n+1}{2k} ```
 
-$$ \to \rightarrow \leftarrow \Rightarrow \Leftarrow \mapsto $$ ``` \to \rightarrow \leftarrow \Rightarrow \Leftarrow \mapsto ```
+$$\to \rightarrow \leftarrow \Rightarrow \Leftarrow \mapsto$$ ``` \to \rightarrow \leftarrow \Rightarrow \Leftarrow \mapsto ```
 
-$$ \land \lor \lnot \forall \exists \top \bot \vdash \vDash $$ ``` \land \lor \lnot \forall \exists \top \bot \vdash \vDash ```
+$$\land \lor \lnot \forall \exists \top \bot \vdash \vDash$$ ``` \land \lor \lnot \forall \exists \top \bot \vdash \vDash ```
 
-$$ \xleftarrow{abc} \xrightarrow{abc} $$ ``` \xleftarrow{abc} \xrightarrow{abc} ```
+$$\xleftarrow{abc} \xrightarrow{abc}$$ ``` \xleftarrow{abc} \xrightarrow{abc} ```
 
 
-$$ \star \ast \oplus \circ \bullet $$ ``` \star \ast \oplus \circ \bullet ```
+$$\star \ast \oplus \circ \bullet$$ ``` \star \ast \oplus \circ \bullet ```
 
-$$ \approx \sim \simeq \cong \equiv \prec \lhd \therefore $$ ``` \approx \sim \simeq \cong \equiv \prec \lhd \therefore ```
+$$\approx \sim \simeq \cong \equiv \prec \lhd \therefore$$ ``` \approx \sim \simeq \cong \equiv \prec \lhd \therefore ```
 
-$$ a\equiv b\pmod n $$ ``` a\equiv b\pmod n ```
+$$a\equiv b\pmod n$$ ``` a\equiv b\pmod n ```
 
-$$ a_1, a_2, \ldots ,a_n $$ ``` a_1, a_2, \ldots ,a_n ```
+$$a_1, a_2, \ldots ,a_n$$ ``` a_1, a_2, \ldots ,a_n ```
 
-$$ a_1+a_2+\cdots+a_n $$ ```a_1+a_2+\cdots+a_n  ```
+$$a_1+a_2+\cdots+a_n$$ ```a_1+a_2+\cdots+a_n  ```
 
-$$ \lceil{x}\rceil $$ ```\lceil{x}\rceil ```
+$$\lceil{x}\rceil$$ ```\lceil{x}\rceil ```
 
-$$ \lfloor{x}\rfloor $$ ```\lfloor{x}\rfloor ```
+$$\lfloor{x}\rfloor$$ ```\lfloor{x}\rfloor ```
 
-$$ \implies $$ ``` \implies ```
+$$\implies$$ ``` \implies ```
 
-$$ \iff $$ ``` \iff ```
+$$\iff$$ ``` \iff ```
 
-$$ \impliedby $$ ``` \impliedby ```
+$$\impliedby$$ ``` \impliedby ```
 
-$$ \to $$ ``` \to ```
+$$\to$$ ``` \to ```
 
-$$ \gets $$ ``` \gets ```
+$$\gets$$ ``` \gets ```
 
 
 ### Superscripts and Subscripts
 
-$$ x_i^2 $$ ``` x_i^2 ```
+$$x_i^2$$ ``` x_i^2 ```
 
-$$ \log_2 x $$ ``` \log_2 x ```
+$$\log_2 x$$ ``` \log_2 x ```
 
 ### Sums and integrals
 
-$$ \sum_1^n $$ ``` \sum_1^n ```
+$$\sum_1^n$$ ``` \sum_1^n ```
 
-$$ \sum_{i=0}^\infty i^2 $$ ``` \sum_{i=0}^\infty i^2 ```
+$$\sum_{i=0}^\infty i^2$$ ``` \sum_{i=0}^\infty i^2 ```
 
-$$ \prod $$ ``` \prod ```
+$$\prod$$ ``` \prod ```
 
-$$ \int $$ ``` \int ```
+$$\int$$ ``` \int ```
 
-$$ \bigcup $$ ``` \bigcup ```
+$$\bigcup$$ ``` \bigcup ```
 
-$$ \bigcap $$ ``` \bigcap ```
+$$\bigcap$$ ``` \bigcap ```
 
-$$ \iint $$ ``` \iint ```
+$$\iint$$ ``` \iint ```
 
 ### Fractions
 
-$$ \frac ab $$ ``` \frac ab ```
+$$\frac ab$$ ``` \frac ab ```
 
-$$ \frac{a+1}{b+1} $$ ``` \frac{a+1}{b+1} ```
+$$\frac{a+1}{b+1}$$ ``` \frac{a+1}{b+1} ```
 
-$$ {a+1\over b+1} $$ ``` {a+1\over b+1} ```
+$${a+1\over b+1}$$ ``` {a+1\over b+1} ```
 
-$$ \cfrac{a}{b} $$ ``` \cfrac{a}{b} ```
+$$\cfrac{a}{b}$$ ``` \cfrac{a}{b} ```
 
 ### Radical signs
 
-$$ \sqrt{x^3} $$ ``` \sqrt{x^3} ```
+$$\sqrt{x^3}$$ ``` \sqrt{x^3} ```
 
-$$ \sqrt[3]{\frac xy} $$ ``` \sqrt[3]{\frac xy} ```
+$$\sqrt[3]{\frac xy}$$ ``` \sqrt[3]{\frac xy} ```
 
 ### Accents and diacritical marks
 
-$$ \hat x $$ ``` \hat x ```
+$$\hat x$$ ``` \hat x ```
 
-$$ \widehat{xy} $$ ``` \widehat{xy} ```
+$$\widehat{xy}$$ ``` \widehat{xy} ```
 
-$$ \bar x $$ ``` \bar x ```
+$$\bar x$$ ``` \bar x ```
 
-$$ \overline{xyz} $$ ``` \overline{xyz} ```
+$$\overline{xyz}$$ ``` \overline{xyz} ```
 
-$$ \vec x $$ ``` \vec x ```
+$$\vec x$$ ``` \vec x ```
 
-$$ \overrightarrow{xy} $$ ``` \overrightarrow{xy} ```
+$$\overrightarrow{xy}$$ ``` \overrightarrow{xy} ```
 
-$$ \frac d{dx}x\dot x =  \dot x^2 +  x\ddot x $$ ``` \frac d{dx}x\dot x =  \dot x^2 +  x\ddot x ```
+$$\frac d{dx}x\dot x =  \dot x^2 +  x\ddot x$$ ``` \frac d{dx}x\dot x =  \dot x^2 +  x\ddot x ```
 
-$$ \overset{@}{ABC}\ \overset{x^2}{\longmapsto}\ \overset{\bullet\circ\circ\bullet}{T} $$ ``` \overset{@}{ABC}\ \overset{x^2}{\longmapsto}\ \overset{\bullet\circ\circ\bullet}{T} ```
+$$\overset{@}{ABC}\ \overset{x^2}{\longmapsto}\ \overset{\bullet\circ\circ\bullet}{T}$$ ``` \overset{@}{ABC}\ \overset{x^2}{\longmapsto}\ \overset{\bullet\circ\circ\bullet}{T} ```
 
 ---
 
 ## Matrix
 
 
-$$ 
+$$
 \begin{matrix}
     1 & x & x^2 \\
     1 & y & y^2 \\
@@ -189,7 +189,7 @@ $$
 ```
 
 
-$$ 
+$$
 \begin{pmatrix}
     1 & 2 \\
     3 & 4 \\ 
@@ -205,7 +205,7 @@ $$
 ```
 
 
-$$ 
+$$
 \begin{bmatrix}
     1 & 2 \\
     3 & 4 \\ 
@@ -221,7 +221,7 @@ $$
 ```
 
 
-$$ 
+$$
 \begin{Bmatrix}
     1 & 2 \\
     3 & 4 \\ 
@@ -238,7 +238,7 @@ $$
 ```
 
 
-$$ 
+$$
 \begin{vmatrix}
     1 & 2 \\
     3 & 4 \\ 
@@ -254,7 +254,7 @@ $$
 ```
 
 
-$$ 
+$$
 \begin{Vmatrix}
     1 & 2 \\
     3 & 4 \\ 
@@ -419,26 +419,27 @@ $$
 
 ### Aligned equations
 
+`align` is not supported in 'KaTeX`.
 
 $$
-\begin{align}
+\begin{aligned}
 \sqrt{37} & = \sqrt{\frac{73^2-1}{12^2}} \\
  & = \sqrt{\frac{73^2}{12^2}\cdot\frac{73^2-1}{73^2}} \\ 
  & = \sqrt{\frac{73^2}{12^2}}\sqrt{\frac{73^2-1}{73^2}} \\
  & = \frac{73}{12}\sqrt{1 - \frac{1}{73^2}} \\ 
  & \approx \frac{73}{12}\left(1 - \frac{1}{2\cdot73^2}\right)
-\end{align}
+\end{aligned}
 $$
  
 
 ``` tex
-\begin{align}
+\begin{aligned}
 \sqrt{37} & = \sqrt{\frac{73^2-1}{12^2}} \\
  & = \sqrt{\frac{73^2}{12^2}\cdot\frac{73^2-1}{73^2}} \\ 
  & = \sqrt{\frac{73^2}{12^2}}\sqrt{\frac{73^2-1}{73^2}} \\
  & = \frac{73}{12}\sqrt{1 - \frac{1}{73^2}} \\ 
  & \approx \frac{73}{12}\left(1 - \frac{1}{2\cdot73^2}\right)
-\end{align}
+\end{aligned}
 ```
 
 ### Piecewise functions
@@ -623,6 +624,7 @@ x = a_0 + \cfrac{1^2}{a_1
 
 ### Highlighting equation
 
+`bbox` is not supported in `KaTex`
 
 $$
 \bbox[yellow]
@@ -815,6 +817,7 @@ $$
 
 ## Commutative diagrams
 
+`CD` is not supported in `KaTex`
 
 $$
 \require{AMScd}
@@ -857,6 +860,6 @@ D @= E @<<< F
 
 ## Pack of cards
 
-$$ \spadesuit\quad\heartsuit\quad\diamondsuit\quad\clubsuit $$ ``` \spadesuit\quad\heartsuit\quad\diamondsuit\quad\clubsuit ```
+$$\spadesuit\quad\heartsuit\quad\diamondsuit\quad\clubsuit$$ ``` \spadesuit\quad\heartsuit\quad\diamondsuit\quad\clubsuit ```
 
-$$ \color{red}{\heartsuit}\quad\color{red}{\diamondsuit} $$ ``` \color{red}{\heartsuit}\quad\color{red}{\diamondsuit} ```
+$$\color{red}{\heartsuit}\quad\color{red}{\diamondsuit}$$ ``` \color{red}{\heartsuit}\quad\color{red}{\diamondsuit} ```

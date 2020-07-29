@@ -310,11 +310,11 @@ depend on the plaintext received from previous requests
         * If ciphertexts and one plaintext are known.
         
             $$
-            \begin{align*}
+            \begin{aligned}
                 &\text{Ciphertext}_1\oplus\text{Ciphertext}_2\\
                 =\ &\text{Plaintext}_1\oplus\text{key}\oplus\text{Plaintext}_2\oplus\text{key}\\
                 =\ &\text{Plaintext}_1\oplus\text{Plaintext}_2
-            \end{align*}
+            \end{aligned}
             $$
 
     * Not random
@@ -349,7 +349,7 @@ depend on the plaintext received from previous requests
     * 32-bit block counter
 * How it works
     * Output a 64-byte block of key stream and increments block counter in each invocation
-        * $k=\text{ chacha_stream(key, nonce, counter)}$
+        * $k=\text{chacha{\textunderscore}stream(key, nonce, counter)}$
     * $c_i = m_i \oplus k_i$
     * If never use the same nonce with the same key twice, it is a one time pad.
 
