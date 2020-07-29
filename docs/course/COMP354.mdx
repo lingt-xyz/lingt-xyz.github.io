@@ -253,10 +253,9 @@ Adapted from Stuart Thiel's lecture, 2018 Summer.
 
 ## Design Patterns
 
-<object data={useBaseUrl('assets/COMP 354/designpatternscard')} type="application/pdf" width="100%" height="850px">
-    <embed src={useBaseUrl('assets/COMP 354/designpatternscard')} type="application/pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href={useBaseUrl('assets/COMP 354/designpatternscard')}>Download PDF</a>.</p>
-    </embed>
+<object data={useBaseUrl('assets/COMP 354/designpatternscard.pdf')} type="application/pdf" width="100%" height="850px">
+    <embed src={useBaseUrl('assets/COMP 354/designpatternscard.pdf')} type="application/pdf">
+            </embed>
 </object>
 
 ### What are patterns?
@@ -355,7 +354,7 @@ As each design pattern is translated into some element of the design model, work
 * Quality considerations are built into good patterns
 
 ### Pattern-based design in context
-![Pattern-based design in context](/assets/COMP 354/Pattern_in_context.png "Pattern-based design in context")
+![Pattern-based design in context](/assets/COMP354/Pattern_in_context.png "Pattern-based design in context")
 
 ### Thinking in Patterns
 * Mental Design Steps:
@@ -501,7 +500,7 @@ Development. Addison Wesley, 3rd edition, 2013.
 * **Solution**: Convert the original interface into another interface through an intermediate adapter object.
 * Polymorphism from GRASP uses the adapter pattern, the adapter being the common interface.
 * Often a common interface will be made, and adapters implementing that interface will delegate to the varying objects, hiding the differences.
-* e.g.: ![Pattern-based design in context](/assets/COMP 354/Adapter.png "Adapter")
+* e.g.: ![Pattern-based design in context](/assets/COMP354/Adapter.png)
 
 ## Factory
 
@@ -515,7 +514,7 @@ objects, the need to generally maintain high cohesion.
 * **Problem**: Exactly one instance of a class is allowed. Other objects need a global and single point of access
 * **Solution**: Define a static method of the class that returns the singleton
 * Concurrency control is common around Singletons.
-* e.g.: ![Pattern-based design in context](/assets/COMP 354/Singleton.png "Singleton")
+* e.g.: ![Pattern-based design in context](/assets/COMP354/Singleton.png "Singleton")
 
 ### Why not make it all static?
 * instance-methods allow subclassing, refinement (overloading) of the Singleton class for effective reuse. Static methods aren’t polymorphic, and generally don’t support overwriting in languages where such things are allowed (part of the definition of the class)
@@ -528,7 +527,7 @@ objects, the need to generally maintain high cohesion.
 * **Solution**: Define each algorithm/policy/strategy in a separate class with a common interface
 * Often this leads to the instance of the strategy being created by a Factory that is passed enough info to know what to do.
 * Polymorphism and Protected Variation at work!
-* e.g.: ![Pattern-based design in context](/assets/COMP 354/Strategy.png "Strategy")
+* e.g.: ![Pattern-based design in context](/assets/COMP354/Strategy.png "Strategy")
 
 ## Composite
 
@@ -536,7 +535,7 @@ objects, the need to generally maintain high cohesion.
 * **Solution**: Define an interface for composite objects that is shared with the atomic objects it composes
 * works well with the strategy pattern, as certain strategies may just be several simpler strategies applied together (e.g. discounts)
 * when using composites, it’s generally a good practice to pass around the composites instead of digging out the children (components). Composite Pattern done well supports this.
-* e.g.: ![Pattern-based design in context](/assets/COMP 354/Composite.png "Composite")
+* e.g.: ![Pattern-based design in context](/assets/COMP354/Composite.png "Composite")
 
 ## Facade
 

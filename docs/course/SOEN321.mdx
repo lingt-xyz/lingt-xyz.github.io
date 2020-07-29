@@ -88,7 +88,7 @@ $a\equiv b\pmod n$
 
 ### 1.1 Security stack
 
-![Security Stack]({{ site.baseurl }}/assets/resources/SOEN321/Security_Stack.png)
+![Security Stack](/assets/SOEN321/Security_Stack.png)
 
 ### 1.2 Security v.s. Correctness
 
@@ -164,7 +164,7 @@ Cryptography is the study of *mathematical techniques* related to aspects of inf
 
 ### 2.6 Encryption 
 
-![Encryption Model]({{ site.baseurl }}/assets/resources/SOEN321/Encryption_Model.png)
+![Encryption Model](/assets/SOEN321/Encryption_Model.png)
 
 * Goals
     1. Data confidentiality
@@ -222,7 +222,7 @@ Cryptography is the study of *mathematical techniques* related to aspects of inf
 * Break it: Brute force
     * Only $25$ keys
 
-![Shift Cipher]({{ site.baseurl }}/assets/resources/SOEN321/Shift_Cipher.png)
+![Shift Cipher](/assets/SOEN321/Shift_Cipher.png)
 
 ##### Polyalphabetic substitution
 * How it works
@@ -294,7 +294,7 @@ depend on the plaintext received from previous requests
     * Cipertext: $c_1c_2\ldots c_t$
     * $c_i=m_i\oplus k_i, 1\leq i\leq t$
 
-![Vernam Cipher]({{ site.baseurl }}/assets/resources/SOEN321/Vernam_Cipher.png)
+![Vernam Cipher](/assets/SOEN321/Vernam_Cipher.png)
 
 ### 3.2 One-time pad
 * Why we need it
@@ -308,14 +308,14 @@ depend on the plaintext received from previous requests
 * What if
     * Reuse the key-steam
         * If ciphertexts and one plaintext are known.
-
-         $$
-         \begin{align*}
-            &\text{Ciphertext}_1\oplus\text{Ciphertext}_2\\
-            =\ &\text{Plaintext}_1\oplus\text{key}\oplus\text{Plaintext}_2\oplus\text{key}\\
-            =\ &\text{Plaintext}_1\oplus\text{Plaintext}_2
-        \end{align*}
-         $$ 
+        
+            $$
+            \begin{align*}
+                &\text{Ciphertext}_1\oplus\text{Ciphertext}_2\\
+                =\ &\text{Plaintext}_1\oplus\text{key}\oplus\text{Plaintext}_2\oplus\text{key}\\
+                =\ &\text{Plaintext}_1\oplus\text{Plaintext}_2
+            \end{align*}
+            $$
 
     * Not random
         * Brute-force
@@ -366,8 +366,8 @@ depend on the plaintext received from previous requests
         * Not onto: Some $c_i$s have no correspoing $m_i$s, so if a bit flip occurs, decryption would fail.
         * Not one-to-one: Ambiguity, $c_i$ maps more than one $m_i$.
         
-![Bijection]({{ site.baseurl }}/assets/resources/SOEN321/Bijection.png)
-![Non Bijection]({{ site.baseurl }}/assets/resources/SOEN321/Bijection_Non.png)
+![Bijection](/assets/SOEN321/Bijection.png)
+![Non Bijection](/assets/SOEN321/Bijection_Non.png)
 
 * Used for
     1. Data confidentiality
@@ -405,13 +405,13 @@ depend on the plaintext received from previous requests
     * $c_j=E_k(x_j)$
     * $x_j=E^{-1}(c_j)$
 
-![ECB]({{ site.baseurl }}/assets/resources/SOEN321/ECB.png)
+![ECB](/assets/SOEN321/ECB.png)
 
 * Weakness
     * Does not hide data patterns
     * Malicious substition of ciphertext is possible
 
-![ECB_pattern]({{ site.baseurl }}/assets/resources/SOEN321/ECB_pattern.png)
+![ECB_pattern](/assets/SOEN321/ECB_pattern.png)
 
 * Usage
     * When can we use this mode:
@@ -435,7 +435,7 @@ depend on the plaintext received from previous requests
     * $c_j=E_k(c_{j-1}\oplus x_j)$ for $j\geq 1$, $c_0=IV$
     * $x_j=c_{j-1}\oplus E^{-1}(c_j)$ for $j\geq 1$, $c_0=IV$
 
-![CBC]({{ site.baseurl }}/assets/resources/SOEN321/CBC.png)
+![CBC](/assets/SOEN321/CBC.png)
 
 
 * Weakness
@@ -454,7 +454,7 @@ depend on the plaintext received from previous requests
 
 * How to
 
-![CTR]({{ site.baseurl }}/assets/resources/SOEN321/CTR.png)
+![CTR](/assets/SOEN321/CTR.png)
 
 ### 4.4 XTS-AES
 
@@ -466,7 +466,7 @@ depend on the plaintext received from previous requests
 
 * How to
 
-![CTS]({{ site.baseurl }}/assets/resources/SOEN321/CTS.png)
+![CTS](/assets/SOEN321/CTS.png)
 
 * Why //TODO
 
@@ -501,8 +501,8 @@ depend on the plaintext received from previous requests
 
 * How to
 
-![SP]({{ site.baseurl }}/assets/resources/SOEN321/SP.png)
-![SP Transposition]({{ site.baseurl }}/assets/resources/SOEN321/SP_T.png)
+![SP](/assets/SOEN321/SP.png)
+![SP Transposition](/assets/SOEN321/SP_T.png)
 
 #### Feistel structure
 
@@ -516,7 +516,7 @@ depend on the plaintext received from previous requests
     * $L_i = R_{i-1}$
     * $R_i=L_{i-1}\oplus f(R_{i-1},K_i)$
     
-![Feistel Structure]({{ site.baseurl }}/assets/resources/SOEN321/Feistel_Structure.png)
+![Feistel Structure](/assets/SOEN321/Feistel_Structure.png)
     
 * Feistel structure parameters
     * Block size & key size:
@@ -538,14 +538,14 @@ depend on the plaintext received from previous requests
     * Inner bits: the other four bits between the first and last bits
     * e.g.: $011011$, outer bits are $01$, inner bits are $1101$.
 
-![S-box]({{ site.baseurl }}/assets/resources/SOEN321/S_box.png)
+![S-box](/assets/SOEN321/S_box.png)
 
 * Double/Triple encryption (DES)
     * The security of DES depends on its large key space.
     * Double encryption should **_double_** the size ($2^{112}$) of the key space?
     * $C=E_{k_2}(E_{k_1}(P))$
 
-    ![Double/Triple encryption]({{ site.baseurl }}/assets/resources/SOEN321/D_T_encryption.png)
+    ![Double/Triple encryption](/assets/SOEN321/D_T_encryption.png)
 
     * Meet-in-the-middle attack (DES)
         * Double-DES: $M=E_{k_1}(P)=D_{k_2}(C)$
@@ -575,24 +575,24 @@ depend on the plaintext received from previous requests
             * Each byte in the state is replaced with its entry in a fixed 8-bit lookup table S (substitution box or S-box).
             * Provides non-linearity.
 
-            ![SubBytes]({{ site.baseurl }}/assets/resources/SOEN321/SubBytes.png)
+            ![SubBytes](/assets/SOEN321/SubBytes.png)
 
         2. ShiftRows(State): a transpositioin step
             * Avoid the columns being encrypted independently.
             
-            ![ShiftRows]({{ site.baseurl }}/assets/resources/SOEN321/ShiftRows.png)
+            ![ShiftRows](/assets/SOEN321/ShiftRows.png)
 
         3. MixColumns(State): 
             * Each column of the state is multiplied with a fixed polynomial.
             * Together ShiftRows, MixColumns provides diffusion.
 
-            ![MixColumns]({{ site.baseurl }}/assets/resources/SOEN321/MixColumns.png)
+            ![MixColumns](/assets/SOEN321/MixColumns.png)
 
         4. AddRoundKey(State, $Key_R$):
             * The round subkey is combined with the state using bitwise XOR
             * For each round, a subkey is derived from the main key using Rijndael's key schedule
 
-            ![AddRoundKey]({{ site.baseurl }}/assets/resources/SOEN321/AddRoundKey.png)
+            ![AddRoundKey](/assets/SOEN321/AddRoundKey.png)
             
     4. Final Round (no MixColumns)
         1. SubBytes
@@ -661,11 +661,11 @@ depend on the plaintext received from previous requests
 
 ### 5.4 General structure of iterated Hash Functions
 
-![Iterated Hash Functions]({{ site.baseurl }}/assets/resources/SOEN321/Iterated_Hash_function.png)
+![Iterated Hash Functions](/assets/SOEN321/Iterated_Hash_function.png)
 
 #### The Merkle–Damgård (MD) Construction of hash functions
 
-![Merkle–Damgård Construction]({{ site.baseurl }}/assets/resources/SOEN321/MD_Scheme.png)
+![Merkle–Damgård Construction](/assets/SOEN321/MD_Scheme.png)
 
 * How
     1. Padding, because compressions functions cannot handle inputs of arbitrary size.
@@ -830,14 +830,14 @@ depend on the plaintext received from previous requests
         * Only $K_{d,Bob}$ can decrypt a message encrypted with $K_{e,Bob}$.
         * Notice this means that even Alice cannot decrypt $C$.
 
-![Public Key Encryption]({{ site.baseurl }}/assets/resources/SOEN321/Public_Key_Encryption.png)
+![Public Key Encryption](/assets/SOEN321/Public_Key_Encryption.png)
 
 * Attack: Man-in-the-middle attack (MITM)
     * Substitute different public keys between two users
     * Adversary: $(e', d')$
     * All public key systems are vulnerable to MITM, must use **_authentic_** public keys.
 
-![Public Key Encryption MITM]({{ site.baseurl }}/assets/resources/SOEN321/Public_Key_Encryption_MITM.png)
+![Public Key Encryption MITM](/assets/SOEN321/Public_Key_Encryption_MITM.png)
 
 ### 7.4 Public Key Signatures
 
@@ -852,7 +852,7 @@ depend on the plaintext received from previous requests
 
 ### 7.5 Diffie-Hellman Key Exchange (D-H Key Exchange)
 
-![D-H Key Exchange]({{ site.baseurl }}/assets/resources/SOEN321/D_H_Key.png)
+![D-H Key Exchange](/assets/SOEN321/D_H_Key.png)
 
 * Overview
     * Enables two parties to jointly establish a shared secret key, no prior shared secret
@@ -872,7 +872,7 @@ depend on the plaintext received from previous requests
     * The attacker needs either $a$ or $b$ to compute $K_{ab}$.
     * Or Man in the Middle
 
-![D-H Man in the Middle]({{ site.baseurl }}/assets/resources/SOEN321/mitm.png)
+![D-H Man in the Middle](/assets/SOEN321/mitm.png)
 * **_D-H Man in the Middle_**
     * Why it works? No authentication
     * How it works?
@@ -1015,7 +1015,7 @@ depend on the plaintext received from previous requests
     5. Publish your public key
     6. Collect public keys of your contacts
 * Encryptoin/Decryption
-    ![PGP]({{ site.baseurl }}/assets/resources/SOEN321/pgp.png)
+    ![PGP](/assets/SOEN321/pgp.png)
 
 * [Why Johnny Can’t Encrypt](https://www.cs.berkeley.edu/~tygar/papers/Why_Johnny_Cant_Encrypt/OReilly.pdf): A Usability Evaluation of PGP 5.0
     * Hypothesis: effective security requires a different usability standard, and that it will not be achieved through the user interface design techniques
@@ -1161,7 +1161,7 @@ depend on the plaintext received from previous requests
 
 ## 9. Botnets and DDoS
 
-![Bot nets]({{ site.baseurl }}/assets/resources/SOEN321/botnets.png)
+![Bot nets](/assets/SOEN321/botnets.png)
 
 ### 9.1 Botnets
 
@@ -1189,13 +1189,13 @@ depend on the plaintext received from previous requests
         * Better control
         * Efficient attacks
         * Single-point vulnerability
-    ![Bot center]({{ site.baseurl }}/assets/resources/SOEN321/bot_center.png)
+    ![Bot center](/assets/SOEN321/bot_center.png)
 
     * P2P
         * robust againt disruption
         * Inefficient
         * unreliable from attackers' viewpoint
-    ![Bot P2P]({{ site.baseurl }}/assets/resources/SOEN321/bot_p2p.png)
+    ![Bot P2P](/assets/SOEN321/bot_p2p.png)
 
     * Hybrid: mixture of centralized and P2P
 * How to protect masterbot: Dynamic domain names
@@ -1260,7 +1260,7 @@ depend on the plaintext received from previous requests
 
 ### 9.4 Mirai attack
 
-![Mirai]({{ site.baseurl }}/assets/resources/SOEN321/Mirai.png)
+![Mirai](/assets/SOEN321/Mirai.png)
 
 1. Scan: sent TCP CYN probes to pseudorandom IPv4 addresses, excluding blacklist. 
     * Why scan? and scan efficient?
