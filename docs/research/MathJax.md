@@ -1,8 +1,9 @@
 ---
-title: MathJax
+title: MathJax & KaTex
 ---
 
 [MathJax quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
+[KaTex Support Table](https://katex.org/docs/support_table.html)
 
 
 ## Text
