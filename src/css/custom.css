@@ -28,5 +28,6 @@
   writing-mode: vertical-rl;
   padding: 2em;
   max-width: 90%;
+  max-height: 98%;
   overflow-x: auto;
 }

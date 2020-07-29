@@ -1,4 +1,5 @@
 ---
+title: Cassandra in Docker
 ---
 
 An example to play with Cassandra on Docker

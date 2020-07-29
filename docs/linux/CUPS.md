@@ -4,7 +4,6 @@ title: CUPS
 
 Using `CUPS` web interface to configure printers encounters `401: Forbidden` error.
 
-<!--more-->
 ## Problem
 Use `$username` and `$password` to login `CUPS` admin to add printers or change printers' configures would have `401: Forbidden` error.
 

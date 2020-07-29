@@ -1,4 +1,5 @@
 ---
+title: Integration with PyCharm
 ---
 
 This post demostrates how to code python with PyCharm and Github.

@@ -26,13 +26,37 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/course/INSE6110',
+          to: 'docs/course/INSE6130',
           activeBasePath: 'docs/course',
           label: 'Course',
           position: 'left',
         },
         {
-          to: 'docs/linux/bash',
+          to: 'docs/TA/COMP352',
+          activeBasePath: 'docs/ta',
+          label: 'TA',
+          position: 'left',
+        },
+        {
+          to: 'docs/research/Dictionary',
+          activeBasePath: 'docs/research',
+          label: 'Research',
+          position: 'left',
+        },
+        {
+          to: 'docs/language/Go',
+          activeBasePath: 'docs/language',
+          label: 'Language',
+          position: 'left',
+        },
+        {
+          to: 'docs/database/Cassandra',
+          activeBasePath: 'docs/database',
+          label: 'Database',
+          position: 'left',
+        },
+        {
+          to: 'docs/linux/Bash',
           activeBasePath: 'docs/linux',
           label: 'Linux',
           position: 'left',

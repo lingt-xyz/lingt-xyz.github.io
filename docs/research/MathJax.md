@@ -1,35 +1,33 @@
 ---
 title: MathJax
-toc_sticky: false
 ---
 
 [MathJax quick reference](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
 
-<!--more-->
 
 ## Text
 
 ### Plain text
 
-{% raw %}$$ \{x\in s\mid x\text{ is extra large}\} $${% endraw %} ``` \{x\in s\mid x\text{ is extra large}\} ```
+$$ \{x\in s\mid x\text{ is extra large}\} $$ ``` \{x\in s\mid x\text{ is extra large}\} ```
 
 ### Greek letters
 
-{% raw %}$$ \alpha, \beta, … \omega $${% endraw %} ```\alpha, \beta, …, \omega```
+$$ \alpha, \beta, … \omega $$ ```\alpha, \beta, …, \omega```
 
-{% raw %}$$ \Gamma, \Delta, …, \Omega $${% endraw %} ```\Gamma, \Delta, …, \Omega```
+$$ \Gamma, \Delta, …, \Omega $$ ```\Gamma, \Delta, …, \Omega```
 
 ### Fonts
 
 Use ```\mathbb``` or ```\Bbb``` for "blackboard bold"
 
-{% raw %}$$ \mathbb{CHNQRZ} $${% endraw %} ``` \mathbb{CHNQRZ} ```
+$$ \mathbb{CHNQRZ} $$ ``` \mathbb{CHNQRZ} ```
 
 ### Escape characters
 
-{% raw %}$$ \backslash $${% endraw %} ``` \backslash ```
+$$ \backslash $$ ``` \backslash ```
 
-{% raw %}$$ \_ $${% endraw %} ``` \_ ```
+$$ \_ $$ ``` \_ ```
 
 ---
 
@@ -39,140 +37,140 @@ Use ```\mathbb``` or ```\Bbb``` for "blackboard bold"
 
 A “group” is either a single symbol, or any formula surrounded by curly braces ```{```…```}```.
 
-{% raw %}$$ 10^10 $${% endraw %} ``` 10^10 ```
+$$ 10^10 $$ ``` 10^10 ```
 
-{% raw %}$$ 10^{10} $${% endraw %} ``` 10^{10} ```
+$$ 10^{10} $$ ``` 10^{10} ```
 
-{% raw %}$$ x_i^2 $${% endraw %} ``` x_i^2 ```
+$$ x_i^2 $$ ``` x_i^2 ```
 
-{% raw %}$$ x_{i^2} $${% endraw %} ``` x_{i^2} ```
+$$ x_{i^2} $$ ``` x_{i^2} ```
 
 
 ### Parentheses 
 
-Ordinary symbols ```()[]``` make parentheses and brackets (2+3)[4+4]. Use ```\{``` and ```\}``` for curly braces {% raw %}$$ \{\} $${% endraw %}.
+Ordinary symbols ```()[]``` make parentheses and brackets (2+3)[4+4]. Use ```\{``` and ```\}``` for curly braces $$ \{\} $$.
 
-{% raw %}$$ \langle\rangle $${% endraw %} `\langle\rangle`
+$$ \langle\rangle $$ `\langle\rangle`
 
-{% raw %}$$ (\frac{\sqrt x}{y^3}) $${% endraw %} ``` (\frac{\sqrt x}{y^3}) ```
+$$ (\frac{\sqrt x}{y^3}) $$ ``` (\frac{\sqrt x}{y^3}) ```
 
-{% raw %}$$ \left(\frac{\sqrt x}{y^3}\right) $${% endraw %} ``` \left(\frac{\sqrt x}{y^3}\right) ```
+$$ \left(\frac{\sqrt x}{y^3}\right) $$ ``` \left(\frac{\sqrt x}{y^3}\right) ```
 
-{% raw %}$$ \Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr) $${% endraw %} ``` \Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr) ```
+$$ \Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr) $$ ``` \Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr) ```
 
 ### Braces
 
-{% raw %}$$ \overbrace{(n - 2) + \overbrace{(n - 1) + n + (n + 1)} + (n + 2)} $${% endraw %} ``` \overbrace{(n - 2) + \overbrace{(n - 1) + n + (n + 1)} + (n + 2)} ```
+$$ \overbrace{(n - 2) + \overbrace{(n - 1) + n + (n + 1)} + (n + 2)} $$ ``` \overbrace{(n - 2) + \overbrace{(n - 1) + n + (n + 1)} + (n + 2)} ```
 
-{% raw %}$$ (n \underbrace{- 2) + (n \underbrace{- 1) + n + (n +} 1) + (n +} 2) $${% endraw %} ``` (n \underbrace{- 2) + (n \underbrace{- 1) + n + (n +} 1) + (n +} 2) ```
+$$ (n \underbrace{- 2) + (n \underbrace{- 1) + n + (n +} 1) + (n +} 2) $$ ``` (n \underbrace{- 2) + (n \underbrace{- 1) + n + (n +} 1) + (n +} 2) ```
 
-{% raw %}$$ \underbrace{a\cdot a\cdots a}_{b\text{ times}} $${% endraw %} ``` \underbrace{a\cdot a\cdots a}_{b\text{ times}} ```
+$$ \underbrace{a\cdot a\cdots a}_{b\text{ times}} $$ ``` \underbrace{a\cdot a\cdots a}_{b\text{ times}} ```
 
 ---
 
 ## Special symbols
 
-{% raw %}$$ \lt \gt \le \leq \leqq \leqslant \ge \geq \geqq \geqslant \neq $${% endraw %} ``` \lt \gt \le \leq \leqq \leqslant \ge \geq \geqq \geqslant \neq ```
+$$ \lt \gt \le \leq \leqq \leqslant \ge \geq \geqq \geqslant \neq $$ ``` \lt \gt \le \leq \leqq \leqslant \ge \geq \geqq \geqslant \neq ```
 
-{% raw %}$$ x\cdot y \times \div \pm \mp $${% endraw %} ``` x\cdot y \times \div \pm \mp ```
+$$ x\cdot y \times \div \pm \mp $$ ``` x\cdot y \times \div \pm \mp ```
 
-{% raw %}$$ \cup \cap \setminus \subset \subseteq \subsetneq \supset \in \notin \emptyset \varnothing $${% endraw %} ``` \cup \cap \setminus \subset \subseteq \subsetneq \supset \in \notin \emptyset \varnothing ```
+$$ \cup \cap \setminus \subset \subseteq \subsetneq \supset \in \notin \emptyset \varnothing $$ ``` \cup \cap \setminus \subset \subseteq \subsetneq \supset \in \notin \emptyset \varnothing ```
 
-{% raw %}$$ {n+1 \choose 2k} \binom{n+1}{2k} $${% endraw %} ``` {n+1 \choose 2k} \binom{n+1}{2k} ```
+$$ {n+1 \choose 2k} \binom{n+1}{2k} $$ ``` {n+1 \choose 2k} \binom{n+1}{2k} ```
 
-{% raw %}$$ \to \rightarrow \leftarrow \Rightarrow \Leftarrow \mapsto $${% endraw %} ``` \to \rightarrow \leftarrow \Rightarrow \Leftarrow \mapsto ```
+$$ \to \rightarrow \leftarrow \Rightarrow \Leftarrow \mapsto $$ ``` \to \rightarrow \leftarrow \Rightarrow \Leftarrow \mapsto ```
 
-{% raw %}$$ \land \lor \lnot \forall \exists \top \bot \vdash \vDash $${% endraw %} ``` \land \lor \lnot \forall \exists \top \bot \vdash \vDash ```
+$$ \land \lor \lnot \forall \exists \top \bot \vdash \vDash $$ ``` \land \lor \lnot \forall \exists \top \bot \vdash \vDash ```
 
-{% raw %}$$ \xleftarrow{abc} \xrightarrow{abc} $${% endraw %} ``` \xleftarrow{abc} \xrightarrow{abc} ```
+$$ \xleftarrow{abc} \xrightarrow{abc} $$ ``` \xleftarrow{abc} \xrightarrow{abc} ```
 
 
-{% raw %}$$ \star \ast \oplus \circ \bullet $${% endraw %} ``` \star \ast \oplus \circ \bullet ```
+$$ \star \ast \oplus \circ \bullet $$ ``` \star \ast \oplus \circ \bullet ```
 
-{% raw %}$$ \approx \sim \simeq \cong \equiv \prec \lhd \therefore $${% endraw %} ``` \approx \sim \simeq \cong \equiv \prec \lhd \therefore ```
+$$ \approx \sim \simeq \cong \equiv \prec \lhd \therefore $$ ``` \approx \sim \simeq \cong \equiv \prec \lhd \therefore ```
 
-{% raw %}$$ a\equiv b\pmod n $${% endraw %} ``` a\equiv b\pmod n ```
+$$ a\equiv b\pmod n $$ ``` a\equiv b\pmod n ```
 
-{% raw %}$$ a_1, a_2, \ldots ,a_n $${% endraw %} ``` a_1, a_2, \ldots ,a_n ```
+$$ a_1, a_2, \ldots ,a_n $$ ``` a_1, a_2, \ldots ,a_n ```
 
-{% raw %}$$ a_1+a_2+\cdots+a_n $${% endraw %} ```a_1+a_2+\cdots+a_n  ```
+$$ a_1+a_2+\cdots+a_n $$ ```a_1+a_2+\cdots+a_n  ```
 
-{% raw %}$$ \lceil{x}\rceil $${% endraw %} ```\lceil{x}\rceil ```
+$$ \lceil{x}\rceil $$ ```\lceil{x}\rceil ```
 
-{% raw %}$$ \lfloor{x}\rfloor $${% endraw %} ```\lfloor{x}\rfloor ```
+$$ \lfloor{x}\rfloor $$ ```\lfloor{x}\rfloor ```
 
-{% raw %}$$ \implies $${% endraw %} ``` \implies ```
+$$ \implies $$ ``` \implies ```
 
-{% raw %}$$ \iff $${% endraw %} ``` \iff ```
+$$ \iff $$ ``` \iff ```
 
-{% raw %}$$ \impliedby $${% endraw %} ``` \impliedby ```
+$$ \impliedby $$ ``` \impliedby ```
 
-{% raw %}$$ \to $${% endraw %} ``` \to ```
+$$ \to $$ ``` \to ```
 
-{% raw %}$$ \gets $${% endraw %} ``` \gets ```
+$$ \gets $$ ``` \gets ```
 
 
 ### Superscripts and Subscripts
 
-{% raw %}$$ x_i^2 $${% endraw %} ``` x_i^2 ```
+$$ x_i^2 $$ ``` x_i^2 ```
 
-{% raw %}$$ \log_2 x $${% endraw %} ``` \log_2 x ```
+$$ \log_2 x $$ ``` \log_2 x ```
 
 ### Sums and integrals
 
-{% raw %}$$ \sum_1^n $${% endraw %} ``` \sum_1^n ```
+$$ \sum_1^n $$ ``` \sum_1^n ```
 
-{% raw %}$$ \sum_{i=0}^\infty i^2 $${% endraw %} ``` \sum_{i=0}^\infty i^2 ```
+$$ \sum_{i=0}^\infty i^2 $$ ``` \sum_{i=0}^\infty i^2 ```
 
-{% raw %}$$ \prod $${% endraw %} ``` \prod ```
+$$ \prod $$ ``` \prod ```
 
-{% raw %}$$ \int $${% endraw %} ``` \int ```
+$$ \int $$ ``` \int ```
 
-{% raw %}$$ \bigcup $${% endraw %} ``` \bigcup ```
+$$ \bigcup $$ ``` \bigcup ```
 
-{% raw %}$$ \bigcap $${% endraw %} ``` \bigcap ```
+$$ \bigcap $$ ``` \bigcap ```
 
-{% raw %}$$ \iint $${% endraw %} ``` \iint ```
+$$ \iint $$ ``` \iint ```
 
 ### Fractions
 
-{% raw %}$$ \frac ab $${% endraw %} ``` \frac ab ```
+$$ \frac ab $$ ``` \frac ab ```
 
-{% raw %}$$ \frac{a+1}{b+1} $${% endraw %} ``` \frac{a+1}{b+1} ```
+$$ \frac{a+1}{b+1} $$ ``` \frac{a+1}{b+1} ```
 
-{% raw %}$$ {a+1\over b+1} $${% endraw %} ``` {a+1\over b+1} ```
+$$ {a+1\over b+1} $$ ``` {a+1\over b+1} ```
 
-{% raw %}$$ \cfrac{a}{b} $${% endraw %} ``` \cfrac{a}{b} ```
+$$ \cfrac{a}{b} $$ ``` \cfrac{a}{b} ```
 
 ### Radical signs
 
-{% raw %}$$ \sqrt{x^3} $${% endraw %} ``` \sqrt{x^3} ```
+$$ \sqrt{x^3} $$ ``` \sqrt{x^3} ```
 
-{% raw %}$$ \sqrt[3]{\frac xy} $${% endraw %} ``` \sqrt[3]{\frac xy} ```
+$$ \sqrt[3]{\frac xy} $$ ``` \sqrt[3]{\frac xy} ```
 
 ### Accents and diacritical marks
 
-{% raw %}$$ \hat x $${% endraw %} ``` \hat x ```
+$$ \hat x $$ ``` \hat x ```
 
-{% raw %}$$ \widehat{xy} $${% endraw %} ``` \widehat{xy} ```
+$$ \widehat{xy} $$ ``` \widehat{xy} ```
 
-{% raw %}$$ \bar x $${% endraw %} ``` \bar x ```
+$$ \bar x $$ ``` \bar x ```
 
-{% raw %}$$ \overline{xyz} $${% endraw %} ``` \overline{xyz} ```
+$$ \overline{xyz} $$ ``` \overline{xyz} ```
 
-{% raw %}$$ \vec x $${% endraw %} ``` \vec x ```
+$$ \vec x $$ ``` \vec x ```
 
-{% raw %}$$ \overrightarrow{xy} $${% endraw %} ``` \overrightarrow{xy} ```
+$$ \overrightarrow{xy} $$ ``` \overrightarrow{xy} ```
 
-{% raw %}$$ \frac d{dx}x\dot x =  \dot x^2 +  x\ddot x $${% endraw %} ``` \frac d{dx}x\dot x =  \dot x^2 +  x\ddot x ```
+$$ \frac d{dx}x\dot x =  \dot x^2 +  x\ddot x $$ ``` \frac d{dx}x\dot x =  \dot x^2 +  x\ddot x ```
 
-{% raw %}$$ \overset{@}{ABC}\ \overset{x^2}{\longmapsto}\ \overset{\bullet\circ\circ\bullet}{T} $${% endraw %} ``` \overset{@}{ABC}\ \overset{x^2}{\longmapsto}\ \overset{\bullet\circ\circ\bullet}{T} ```
+$$ \overset{@}{ABC}\ \overset{x^2}{\longmapsto}\ \overset{\bullet\circ\circ\bullet}{T} $$ ``` \overset{@}{ABC}\ \overset{x^2}{\longmapsto}\ \overset{\bullet\circ\circ\bullet}{T} ```
 
 ---
 
 ## Matrix
 
-{% raw %}
+
 $$ 
 \begin{matrix}
     1 & x & x^2 \\
@@ -180,7 +178,7 @@ $$
     1 & z & z^2 \\
 \end{matrix}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{matrix}
@@ -190,14 +188,14 @@ $$
 \end{matrix}
 ```
 
-{% raw %}
+
 $$ 
 \begin{pmatrix}
     1 & 2 \\
     3 & 4 \\ 
 \end{pmatrix}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{pmatrix}
@@ -206,14 +204,14 @@ $$
 \end{pmatrix}
 ```
 
-{% raw %}
+
 $$ 
 \begin{bmatrix}
     1 & 2 \\
     3 & 4 \\ 
 \end{bmatrix}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{bmatrix}
@@ -222,7 +220,7 @@ $$
 \end{bmatrix}
 ```
 
-{% raw %}
+
 $$ 
 \begin{Bmatrix}
     1 & 2 \\
@@ -230,7 +228,7 @@ $$
 \end{Bmatrix}
 
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{Bmatrix}
@@ -239,14 +237,14 @@ $$
 \end{Bmatrix}
 ```
 
-{% raw %}
+
 $$ 
 \begin{vmatrix}
     1 & 2 \\
     3 & 4 \\ 
 \end{vmatrix}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{vmatrix}
@@ -255,14 +253,14 @@ $$
 \end{vmatrix}
 ```
 
-{% raw %}
+
 $$ 
 \begin{Vmatrix}
     1 & 2 \\
     3 & 4 \\ 
 \end{Vmatrix}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{Vmatrix}
@@ -271,7 +269,7 @@ $$
 \end{Vmatrix}
 ```
 
-{% raw %}
+
 $$
 \begin{pmatrix}
  1 & a_1 & a_1^2 & \cdots & a_1^n \\
@@ -280,7 +278,7 @@ $$
  1 & a_m & a_m^2 & \cdots & a_m^n    
 \end{pmatrix}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{pmatrix}
@@ -291,7 +289,7 @@ $$
 \end{pmatrix}
 ```
 
-{% raw %}
+
 $$
 \left[
 \begin{array}{cc|c}
@@ -300,7 +298,7 @@ $$
 \end{array}
 \right]
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \left[
@@ -315,7 +313,7 @@ $$
 
 ## Array
 
-{% raw %}
+
 $$
 \begin{array}{c|lcr}
 n & \text{Left} & \text{Center} & \text{Right} \\
@@ -325,7 +323,7 @@ n & \text{Left} & \text{Center} & \text{Right} \\
 3 & -20 & 2000 & 1+10i
 \end{array}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{array}{c|lcr}
@@ -337,7 +335,7 @@ n & \text{Left} & \text{Center} & \text{Right} \\
 \end{array}
 ```
 
-{% raw %}
+
 $$
 % outer vertical array of arrays
 \begin{array}{c}
@@ -375,7 +373,7 @@ $$
 \end{array}
 \end{array}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 % outer vertical array of arrays
@@ -421,7 +419,7 @@ $$
 
 ### Aligned equations
 
-{% raw %}
+
 $$
 \begin{align}
 \sqrt{37} & = \sqrt{\frac{73^2-1}{12^2}} \\
@@ -431,7 +429,7 @@ $$
  & \approx \frac{73}{12}\left(1 - \frac{1}{2\cdot73^2}\right)
 \end{align}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{align}
@@ -445,7 +443,7 @@ $$
 
 ### Piecewise functions
 
-{% raw %}
+
 $$
 f(n) =
 \begin{cases}
@@ -453,7 +451,7 @@ n/2,  & \text{if $n$ is even} \\
 3n+1, & \text{if $n$ is odd}
 \end{cases}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 f(n) =
@@ -463,7 +461,7 @@ n/2,  & \text{if $n$ is even} \\
 \end{cases}
 ```
 
-{% raw %}
+
 $$
 \left.
 \begin{array}{l}
@@ -473,7 +471,7 @@ $$
 \right\}
 =f(n)
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \left.
@@ -487,7 +485,7 @@ $$
 
 ### System of equations
 
-{% raw %}
+
 $$
 \begin{cases}
 a_1x+b_1y+c_1z=d_1 \\ 
@@ -495,7 +493,7 @@ a_2x+b_2y+c_2z=d_2 \\
 a_3x+b_3y+c_3z=d_3
 \end{cases}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{cases}
@@ -505,7 +503,7 @@ a_3x+b_3y+c_3z=d_3
 \end{cases}
 ```
 
-{% raw %}
+
 $$
 \left\{ 
 \begin{array}{c}
@@ -515,7 +513,7 @@ a_3x+b_3y+c_3z=d_3
 \end{array}
 \right. 
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \left\{ 
@@ -527,7 +525,7 @@ a_3x+b_3y+c_3z=d_3
 \right. 
 ```
 
-{% raw %}
+
 $$
 \left\{
 \begin{aligned} 
@@ -537,7 +535,7 @@ a_3x+b_3y+c_3z &=d_3
 \end{aligned} 
 \right.
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \left\{
@@ -549,7 +547,7 @@ a_3x+b_3y+c_3z &=d_3
 \right.
 ```
 
-{% raw %}
+
 $$
 \left\{
 \begin{array}{ll}
@@ -559,7 +557,7 @@ a_3x+b_3y+c_3z &=d_3
 \end{array} 
 \right.
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \left\{
@@ -571,7 +569,7 @@ a_3x+b_3y+c_3z &=d_3
 \right.
 ```
 
-{% raw %}
+
 $$
 \begin{cases}
 a_1x+b_1y+c_1z=d_1 \\[2ex] 
@@ -579,7 +577,7 @@ a_2x+b_2y+c_2z=d_2 \\[2ex]
 a_3x+b_3y+c_3z=d_3
 \end{cases}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{cases}
@@ -589,7 +587,7 @@ a_3x+b_3y+c_3z=d_3
 \end{cases}
 ```
 
-{% raw %}
+
 $$
 \begin{cases}
 a_1x+b_1y+c_1z=\frac{p_1}{q_1} \\
@@ -597,7 +595,7 @@ a_2x+b_2y+c_2z=\frac{p_2}{q_2} \\
 a_3x+b_3y+c_3z=\frac{p_3}{q_3}
 \end{cases}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{cases}
@@ -609,13 +607,13 @@ a_3x+b_3y+c_3z=\frac{p_3}{q_3}
 
 ### Continued fractions
 
-{% raw %}
+
 $$
 x = a_0 + \cfrac{1^2}{a_1
           + \cfrac{2^2}{a_2
             + \cfrac{3^2}{a_3 + \cfrac{4^4}{a_4 + \cdots}}}}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 x = a_0 + \cfrac{1^2}{a_1
@@ -625,7 +623,7 @@ x = a_0 + \cfrac{1^2}{a_1
 
 ### Highlighting equation
 
-{% raw %}
+
 $$
 \bbox[yellow]
 {
@@ -633,7 +631,7 @@ e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n
 \qquad (1)
 }
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \bbox[yellow]
@@ -643,7 +641,7 @@ e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n
 }
 ```
 
-{% raw %}
+
 $$
 \bbox[yellow,5px]
 {
@@ -651,7 +649,7 @@ e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n
 \qquad (1)
 }
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \bbox[yellow,5px]
@@ -661,7 +659,7 @@ e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n
 }
 ```
 
-{% raw %}
+
 $$
 \bbox[5px,border:2px solid red]
 {
@@ -669,7 +667,7 @@ e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n
 \qquad (2) 
 }
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \bbox[5px,border:2px solid red]
@@ -679,7 +677,7 @@ e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n
 }
 ```
 
-{% raw %}
+
 $$
 \bbox[yellow,5px,border:2px solid red]
 {
@@ -687,7 +685,7 @@ e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n
 \qquad (1)
 }
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \bbox[yellow,5px,border:2px solid red]
@@ -701,7 +699,7 @@ e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n
 
 ## Fussy spacing issues
 
-{% raw %}
+
 $$
 \begin{array}{cc}
 \mathrm{Bad} & \mathrm{Better} \\
@@ -710,7 +708,7 @@ e^{i\frac{\pi}2} \quad e^{\frac{i\pi}2}& e^{i\pi/2} \\
 \int_{-\frac\pi2}^\frac\pi2 \sin x\,dx & \int_{-\pi/2}^{\pi/2}\sin x\,dx \\
 \end{array}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{array}{cc}
@@ -721,7 +719,7 @@ e^{i\frac{\pi}2} \quad e^{\frac{i\pi}2}& e^{i\pi/2} \\
 \end{array}
 ```
 
-{% raw %}
+
 $$
 \begin{array}{cc}
 \mathrm{Bad} & \mathrm{Better} \\
@@ -729,7 +727,7 @@ $$
 \{x|x^2\in\Bbb Z\} & \{x\mid x^2\in\Bbb Z\} \\
 \end{array}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{array}{cc}
@@ -739,7 +737,7 @@ $$
 \end{array}
 ```
 
-{% raw %}
+
 $$
 \begin{array}{cc}
 \mathrm{Bad} & \mathrm{Better} \\
@@ -748,7 +746,7 @@ $$
 \int\int\int_V f(x)\,dz\,dy\,dx & \iiint_V f(x)\,dz\,dy\,dx
 \end{array}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{array}{cc}
@@ -763,7 +761,7 @@ $$
 
 ## Colors
 
-{% raw %}
+
 $$
 \begin{array}{|rc|}
 \hline
@@ -787,7 +785,7 @@ $$
 \hline
 \end{array}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{array}{|rc|}
@@ -817,7 +815,7 @@ $$
 
 ## Commutative diagrams
 
-{% raw %}
+
 $$
 \require{AMScd}
 \begin{CD}
@@ -826,7 +824,7 @@ $$
     C @>>d> D
 \end{CD}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \require{AMScd}
@@ -837,7 +835,7 @@ $$
 \end{CD}
 ```
 
-{% raw %}
+
 $$
 \begin{CD}
 A @>>> B @>{\text{very long label}}>> C \\
@@ -845,7 +843,7 @@ A @>>> B @>{\text{very long label}}>> C \\
 D @= E @<<< F
 \end{CD}
 $$
-{% endraw %} 
+ 
 
 ``` tex
 \begin{CD}
@@ -859,6 +857,6 @@ D @= E @<<< F
 
 ## Pack of cards
 
-{% raw %}$$ \spadesuit\quad\heartsuit\quad\diamondsuit\quad\clubsuit $${% endraw %} ``` \spadesuit\quad\heartsuit\quad\diamondsuit\quad\clubsuit ```
+$$ \spadesuit\quad\heartsuit\quad\diamondsuit\quad\clubsuit $$ ``` \spadesuit\quad\heartsuit\quad\diamondsuit\quad\clubsuit ```
 
-{% raw %}$$ \color{red}{\heartsuit}\quad\color{red}{\diamondsuit} $${% endraw %} ``` \color{red}{\heartsuit}\quad\color{red}{\diamondsuit} ```
+$$ \color{red}{\heartsuit}\quad\color{red}{\diamondsuit} $$ ``` \color{red}{\heartsuit}\quad\color{red}{\diamondsuit} ```

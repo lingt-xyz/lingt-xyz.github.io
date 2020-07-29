@@ -1,10 +1,9 @@
 ---
-title: bash
+title: Bash
 ---
 
 Bash Programming
 
-<!--more-->
 
 ## whereis bash
 
