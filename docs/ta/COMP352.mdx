@@ -58,7 +58,7 @@ We have conquered the root $$E$$. Now, this problem was divided into two sub-pro
 * Post-order traversal yields: $$D\ J\ I\ G\ A\ M\ K$$.
 :::
 
-We follow the same approach as what we did on$$E$$.
+We follow the same approach as what we did on $$E$$.
 
 1. $$K$$ is the root, $$D$$ is the first child of $$K$$ and $$M$$ is the last child of $$K$$.
    * $$K$$ has no more child because if it has a child $$K_C$$, then $$K_C$$ would be in-between $$D$$ and $$M$$ in `pre-order` traversal.
@@ -67,7 +67,7 @@ We follow the same approach as what we did on$$E$$.
 ![](/assets/ta/COMP352/p_t_2.png)
 
 :::caution
-We have conquered the root$$K$$and its left child$$D$$. Now the **Problem 1** was divided into a smaller problem:
+We have conquered the root $$K$$ and its left child $$D$$. Now the **Problem 1** was divided into a smaller problem:
 
 * **Problem 1.1**: Draw a tree $$T_{11}$$ where
   * Pre-order traversal yields: $$M\ J\ G\ I\ A$$.
@@ -86,7 +86,7 @@ We have conquered the root$$K$$and its left child$$D$$. Now the **Problem 1** wa
      * If $$G$$ is not a child of $$M$$, then it can only be a child of $$J$$ because $$G$$ is before $$A$$ in `pre-order` . However, $$G$$ cannot be a child of $$J$$ because in `post-order` $$G$$ is after $$J$$.
      * So we know $$G$$ is a child of $$M$$; that is, $$M$$ has three children $$J,G,A$$.
    * What about $$I$$?
-     * From $$G\ I\ A$$in `pre-order` we know $$I$$ can only be a child of $$G$$. This conclusion is consistent with the fact that in `post-order` they are $$I\ G\ A$$.
+     * From $$G\ I\ A$$ in `pre-order` we know $$I$$ can only be a child of $$G$$. This conclusion is consistent with the fact that in `post-order` they are $$I\ G\ A$$.
 
 ![](/assets/ta/COMP352/p_t_3.png)
 
@@ -107,13 +107,13 @@ We have conquered the root$$K$$and its left child$$D$$. Now the **Problem 1** wa
 * Post-order traversal yields: $$F\ L\ B\ H\ C$$.
 :::
 
-1. $$C$$is the root of $$T_{2}$$, $$F$$is the first child, $$H$$is the last child.
-   * This is the same case as Problem 1: $$F$$is the only left-sub-tree of $$T_{2}$$ and $$H\ B\ L$$ is the right-sub-tree.
+1. $$C$$ is the root of $$T_{2}$$, $$F$$ is the first child, $$H$$ is the last child.
+   * This is the same case as Problem 1: $$F$$ is the only left-sub-tree of $$T_{2}$$ and $$H\ B\ L$$ is the right-sub-tree.
 
 ![](/assets/ta/COMP352/p_t_5.png)
 
 :::caution
-We have conquered the root$$C$$and its left child $$F$$. Now the problem 2 was divided into a smaller problem:
+We have conquered the root $$C$$ and its left child $$F$$. Now the problem 2 was divided into a smaller problem:
 
 * **Problem 2.1**: Draw a tree $$T_{21}$$ where
   * Pre-order traversal yields: $$H\ B\ L$$.
@@ -197,12 +197,12 @@ Stretch it first, then relax, so it's called relaxation.
 #### Two sets
 
 * $$C$$ contains the vertices which we have already found the shortest paths to them.
-  * After a vertex was put in$$C$$,  we should never update it again, because the solution has been found at the moment it was put in.
+  * After a vertex was put in $$C$$,  we should never update it again, because the solution has been found at the moment it was put in.
 * $$S$$ contains the vertices connecting to the vertices in $$C$$.
 
 #### Steps
 
-1. Initially,$$C=\emptyset, S=\{v\}$$, where $$v$$ is the starting vertex.
+1. Initially, $$C=\emptyset, S=\{v\}$$, where $$v$$ is the starting vertex.
 2. Do edge relaxation initialization; that is, $$D[v]=0$$ and $$D[u]=\infty$$ for each other vertex $$u$$.
 3. Select the vertex $$s$$ in $$S$$ which has the shortest path to$$v$$.
    1. Move $$s$$ to $$C$$.
@@ -252,7 +252,7 @@ Stretch it first, then relax, so it's called relaxation.
    * $$C=\{A,C,B,D,E\},S=\{F\}$$
    * Relax $$D[F]$$.
      * $$D[F]=D[E]+e_{EF}=12>6$$❌ 
-   * No more vertices put in the set$$S$$.
+   * No more vertices put in the set $$S$$.
      * $$C=\{A,C,B,D,E\},S=\{F\}$$
 8.  Move $$F$$ to $$C$$, now $$S=\emptyset$$.
 
