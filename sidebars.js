@@ -9,7 +9,11 @@ module.exports = {
   },
   TA: ['ta/COMP352'],
   research: ['research/Dictionary', 'research/MathTax'],
-  language: ['language/Go', 'language/Python', 'language/C++', 'language/Compilation',  'language/GCC', 'language/Make', 'language/Container', 'language/Docker', 'language/Integration_With_PyCharm'],
-  database: ['database/Cassandra', 'database/Cassandra_in_Docker'],
+  container: ['programming/container/Container', 'programming/container/Docker' ],
+  go: ['programming/Go/Go'],
+  python: ['programming/Python/Python', 'programming/Python/Integration_With_PyCharm'],
+  cplusplus: ['programming/C++/C++', 'programming/C++/Compilation', 'programming/C++/GCC', 'programming/C++/Make'],
+  database: ['programming/database/Cassandra', 'programming/database/Cassandra_in_Docker'],
+  
   linux: ["linux/Audio", "linux/Bash", "linux/CUPS", "linux/Disk", "linux/Sed", "linux/SFTP", "linux/Tar", "linux/User"]
 };

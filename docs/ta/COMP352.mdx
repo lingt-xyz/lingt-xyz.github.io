@@ -4,6 +4,8 @@ title: COMP 352
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+## Slides
+
 - [Tutorial 2](/assets/ta/COMP352/COMP_352_Tutorial_2.pdf)
 - [Tutorial 3](/assets/ta/COMP352/COMP_352_Tutorial_3.pdf)
 - [Tutorial 4](/assets/ta/COMP352/COMP_352_Tutorial_4.pdf)
@@ -13,3 +15,252 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 - [Tutorial 8](/assets/ta/COMP352/COMP_352_Tutorial_8.pdf)
 - [Tutorial 9](/assets/ta/COMP352/COMP_352_Tutorial_9.pdf)
 - [Tutorial 11](/assets/ta/COMP352/COMP_352_Tutorial_11.pdf)
+
+## Traversals
+
+### Question
+
+:::info
+**Problem** : Draw a tree$$T$$given that:
+
+* A pre-order traversal of $$T$$yields:$$E\ K\ D\ M\ J\ G\ I\ A\ C\ F\ H\ B\ L$$.
+* A post-order traversal of$$T$$yields:$$D\ J\ I\ G\ A\ M\ K\ F\ L\ B\ H\ C\ E$$.
+:::
+
+:::tip
+Use divide and conquer approach.
+:::
+
+1. `pre-order`yields $$E\ K\ D\ M \cdots\Rightarrow E$$ is the root of$$T$$,$$K$$is the first child of$$T$$.
+2. `post-order` yields$$\cdots B\ H\ C\ E\Rightarrow E$$is the root of$$T$$,$$C$$is the last child of$$T$$.
+3. If$$E$$has another child which is in-between$$K$$and$$C$$ , it should be$$D$$because of `pre-order`. However,$$D$$is the first node in `post-order`, so$$D$$cannot be in-between$$K$$and$$C$$.
+4. $$E$$only has a left child$$K$$and a right child$$C\Rightarrow$$
+   * From `pre-oder`, $$K\ D\ M\ J\ G\ I\ A$$is a left-sub-tree;$$C\ F\ H\ B\ L$$is a right-sub-tree.
+   * From `post-order`,$$D\ J\ I\ G\ A\ M\ K$$is a left-sub-tree;$$F\ L\ B\ H\ C$$is a right-sub-tree.
+
+![](/assets/ta/COMP352/p_t_1.png)
+
+:::caution
+We have conquered the root$$E$$. Now, this problem was divided into two sub-problems:
+
+* **Problem 1**: Draw a tree$$T_1$$where
+  * Pre-order traversal yields: $$K\ D\ M\ J\ G\ I\ A$$.
+  * Post-order traversal yields:$$D\ J\ I\ G\ A\ M\ K$$.
+* **Problem 2**: Draw a tree$$T_2$$where
+  * Pre-order traversal yields:$$C\ F\ H\ B\ L$$.
+  * Post-order traversal yields:$$F\ L\ B\ H\ C$$.
+:::
+
+:::info
+**Problem 1**: Draw a tree$$T_1$$where
+
+* Pre-order traversal yields: $$K\ D\ M\ J\ G\ I\ A$$.
+* Post-order traversal yields:$$D\ J\ I\ G\ A\ M\ K$$.
+:::
+
+We follow the same approach as what we did on$$E$$.
+
+1. $$K$$is the root,$$D$$is the first child of$$K$$and$$M$$is the last child of$$K$$.
+   * $$K$$has no more child because if it has a child $$K_C$$, then $$K_C$$would be in-between$$D$$and$$M$$in `pre-order` traversal.
+2. Furthermore, we should know that$$M\ J\ G\ I\ A$$is a right-sub-tree of $$T_1$$because of `pre-order`. That is, if$$D$$has children, they should be in-between$$D$$and$$M$$in `pre-order` traversal.
+
+![](/assets/ta/COMP352/p_t_2.png)
+
+:::caution
+We have conquered the root$$K$$and its left child$$D$$. Now the **Problem 1** was divided into a smaller problem:
+
+* **Problem 1.1**: Draw a tree$$T_{11}$$where
+  * Pre-order traversal yields:$$M\ J\ G\ I\ A$$.
+  * Post-order traversal yields:$$J\ I\ G\ A\ M$$.
+:::
+
+:::info
+**Problem 1.1**: Draw a tree$$T_{11}$$where
+
+* Pre-order traversal yields:$$M\ J\ G\ I\ A$$.
+* Post-order traversal yields:$$J\ I\ G\ A\ M$$.
+:::
+
+1. $$M$$is the root of$$T_{11}$$,$$J$$is the first child,$$A$$is the last child.
+   * If$$M$$has another child which is in-between$$J$$and$$A$$, it should be$$G$$because of `pre-oder`.
+     * If$$G$$is not a child of$$M$$, then it can only be a child of$$J$$because $$G$$is before$$A$$in `pre-order` . However, $$G$$cannot be a child of $$J$$because in `post-order` $$G$$is after$$J$$.
+     * So we know $$G$$is a child of$$M$$; that is, $$M$$has three children$$J,G,A$$.
+   * What about $$I$$?
+     * From $$G\ I\ A$$in `pre-order` we know$$I$$can only be a child of$$G$$. This conclusion is consistent with the fact that in `post-order` they are$$I\ G\ A$$.
+
+![](/assets/ta/COMP352/p_t_3.png)
+
+:::tip
+**Problem 1.1** Solved!
+:::
+
+![](/assets/ta/COMP352/p_t_4.png)
+
+:::tip
+**Problem 1** Solved!
+:::
+
+:::info
+**Problem 2**: Draw a tree$$T_2$$where
+
+* Pre-order traversal yields:$$C\ F\ H\ B\ L$$.
+* Post-order traversal yields:$$F\ L\ B\ H\ C$$.
+:::
+
+1. $$C$$is the root of$$T_{2}$$,$$F$$is the first child,$$H$$is the last child.
+   * This is the same case as Problem 1: $$F$$is the only left-sub-tree of$$T_{2}$$and$$H\ B\ L$$is the right-sub-tree.
+
+![](/assets/ta/COMP352/p_t_5.png)
+
+:::caution
+We have conquered the root$$C$$and its left child$$F$$. Now the problem 2 was divided into a smaller problem:
+
+* **Problem 2.1**: Draw a tree$$T_{21}$$where
+  * Pre-order traversal yields:$$H\ B\ L$$.
+  * Post-order traversal yields:$$L\ B\ H$$.
+:::
+
+:::info
+**Problem 2.1**: Draw a tree$$T_{21}$$where
+
+* Pre-order traversal yields:$$H\ B\ L$$.
+* Post-order traversal yields:$$L\ B\ H$$.
+:::
+
+1. $$H$$is the root of$$T_{21}$$, the first child is$$B$$, and the last child is$$B$$.
+2. So$$H$$only has one child$$B$$, then$$L$$can only be a child of$$B$$.
+
+![](/assets/ta/COMP352/p_t_6.png)
+
+:::tip
+**Problem 2.1** Solved!
+:::
+
+![](/assets/ta/COMP352/p_t_7.png)
+
+:::tip
+**Problem 2** Solved!
+:::
+
+![](/assets/ta/COMP352/p_t_8.png)
+
+:::tip
+**Problem** solved!
+:::
+
+
+
+## Shortest paths
+
+### Problem Define
+
+Given a weighted graph and two vertices$$u$$and$$v$$, we want to find a path of minimum total weight between$$u$$and$$v$$.
+
+:::info
+Types of shortest paths problems
+
+* Single-Source shortest-paths problem
+* Single-destination shortest-paths problem
+* Single-pair shortest-path problem
+* All-pairs shortest-paths problem
+:::
+
+### Shortest Path Properties
+
+1. A sub-path of a shortest path is itself a shortest path.
+2. There is a tree of shortest paths from a start vertex to all the other vertices.
+
+## Dijkstra’s Algorithm
+
+Dijkstra’s algorithm solves single-source shortest-paths problem. It is a type of greedy algorithm.
+
+### Assumptions of Dijkstra's Algorithm
+
+1. The graph is connected.
+2. The edges are undirected.
+3. The edge weights are **non-negative**.
+
+### Edge Relaxation
+
+Edge relaxation is a helper function.
+
+:::info
+Stretch it first, then relax, so it's called relaxation.
+:::
+
+1. Let $$D[u]$$denote the length of the best path from$$v$$to$$u$$that could have been found **so far**.
+2. Initially,$$D[v]=0$$, and$$D[u]=\infty$$for each other vertex$$u$$in the graph. 
+3. $$D[u]$$will afterwards be updated if a better path is found that results in a smaller shortest path value to$$u$$. This step is relaxation.
+
+### Dijkstra's Algorithm
+
+#### Two sets
+
+* $$C$$contains the vertices which we have already found the shortest paths to them.
+  * After a vertex was put in$$C$$,  we should never update it again, because the solution has been found at the moment it was put in.
+* $$S$$contains the vertices connecting to the vertices in$$C$$.
+
+#### Steps
+
+1. Initially,$$C=\emptyset, S=\{v\}$$, where $$v$$is the starting vertex.
+2. Do edge relaxation initialization; that is,$$D[v]=0$$and$$D[u]=\infty$$for each other vertex$$u$$.
+3. Select the vertex$$s$$in$$S$$which has the shortest path to$$v$$.
+   1. Move$$s$$to$$C$$.
+   2. For every vertex which is connected to$$s$$and not in$$C$$, do edge relaxation.
+   3. Add these connected vertices to$$C$$.
+4. Repeating step$$#3$$util $$S=\emptyset$$.
+
+### Example
+
+![\*Figure is &#xA9; Understanding Data Communications and Networks by William A. Shay - PWS publishing company, Third Edition. ISBN-10: 0534383173, ISBN-13:. 978-0534383176  ](/assets/ta/COMP352/sp.jpg)
+
+1. $$C=\emptyset, S=\{A\}$$
+2. $$D[A]=0, D[B]=\infty,D[C]=\infty,D[D]=\infty,D[E]=\infty,D[F]=\infty$$
+3. Move the vertex$$A$$from$$S$$to$$C$$because $$D[A]$$is the smallest one among all vertices in$$S$$.
+   * $$C=\{A\},S=\emptyset$$
+   * Relax$$D[B]$$and$$D[C]$$because $$B,C$$ are connected to$$A$$and they are **not** in the set$$C$$.
+     * $$D[B]=2<\infty$$
+     * $$D[C]=1<\infty$$
+   * Put $$B,C$$in the set$$S$$.
+     * $$C=\{A\},S=\{B,C\}$$
+4. Move the vertex$$C$$from$$S$$to$$C$$because$$D[C]<D[B]$$
+   *  $$C=\{A,C\},S=\{B\}$$
+   * Relax$$D[D],D[E],D[F]$$because$$D,E,F$$are connected to the vertex$$C$$and they are **not** in the set$$C$$.
+     * $$D[D]=D[C]+e_{CD}=4<\infty$$
+     * $$D[E]=D[C]+e_{CE}=7<\infty$$
+     * $$D[F]=D[C]+e_{CF}=8<\infty$$
+   * Put$$D,E,F$$in the set$$S$$.
+     * $$C=\{A,C\},S=\{B,D,E,F\}$$
+5. Move the vertex$$B$$from$$S$$to$$C$$because$$D[B]<D[D]<D[E]<D[F]$$.
+   * $$C=\{A,C,B\},S=\{D,E,F\}$$
+   * Relax $$D[D],D[E],D[F]$$because $$D,E,F$$are connected to$$B$$and they are **not** in the set$$C$$.
+     * $$D[D]=D[B]+e_{BD}=5>4$$
+
+       ❌ $$D[D]$$ should not be updated because its previous value is smaller.
+
+     * $$D[E]=D[B]+e_{BE}=6<7$$
+     * $$D[F]=D[B]+e_{BF}=9>8$$❌ 
+   * No more vertices put in the set$$S$$.
+     * $$C=\{A,C,B\},S=\{D,E,F\}$$
+6. Move $$D$$from $$S$$to$$C$$ because $$D[D]<D[E]<D[F]$$.
+   * $$C=\{A,C,B,D\},S=\{E,F\}$$
+   * Relax $$D[F]$$.
+     * $$D[F]=D[D]+e_{DF}=6<8$$
+   * No more vertices put in the set$$S$$.
+     * $$C=\{A,C,B,D\},S=\{E,F\}$$
+7. Move$$E$$or $$F$$to$$C$$ because$$D[E]=D[F]$$
+   * $$C=\{A,C,B,D,E\},S=\{F\}$$
+   * Relax$$D[F]$$.
+     * $$D[F]=D[E]+e_{EF}=12>6$$❌ 
+   * No more vertices put in the set$$S$$.
+     * $$C=\{A,C,B,D,E\},S=\{F\}$$
+8.  Move$$F$$to$$C$$, now$$S=\emptyset$$.
+
+| $$C$$ | $$S$$ | $$s$$ | $$A$$ | $$B$$ | $$C$$ | $$D$$ | $$E$$ | $$F$$ | $$A$$ | $$B$$ | $$C$$ | $$D$$ | $$E$$ | $$F$$ |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| $$\{\}$$ | $$\{A\}$$ | $$A$$ | $$0$$ | $$\infty$$ | $$\infty$$ | $$\infty$$ | $$\infty$$ | $$\infty$$ | $$A$$ | - | - | - | - | - |
+| $$\{A\}$$ | $$\{B,C\}$$ | $$C$$ | - | $$2$$ | $$1$$ | $$\infty$$ | $$\infty$$ | $$\infty$$ | - | $$A$$ | $$A$$ | - | - | - |
+| $$\{A,C\}$$ | $$\{B,D,E,F\}$$ | $$B$$ | - | $$2$$ | - | $$4$$ | $$7$$ | $$8$$ | - | $$A$$ | - | $$C$$ | $$C$$ | $$C$$ |
+| $$\{A,C,B\}$$ | $$\{D,E,F\}$$ | $$D$$ | - | - | - | $$4$$ | $$6$$ | $$8$$ | - | - | - | $$C$$ | $$B$$ | $$C$$ |
+| $$\{A,C,B,D\}$$ | $$\{E,F\}$$ | $$E$$ | - | - | - | - | $$6$$ | $$6$$ | - | - | - | - | $$B$$ | $$D$$ |
+| $$\{A,C,B,D,E\}$$ | $$\{F\}$$ | $$F$$ | - | - | - | - | - | $$6$$ | - | - | - | - | - | $$D$$ |

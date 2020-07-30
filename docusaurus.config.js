@@ -44,16 +44,32 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/language/Go',
-          activeBasePath: 'docs/language',
-          label: 'Language',
+          // to: 'docs/programming/Go',
+          // activeBasePath: 'docs/programming',
+          label: 'Programming',
           position: 'left',
-        },
-        {
-          to: 'docs/database/Cassandra',
-          activeBasePath: 'docs/database',
-          label: 'Database',
-          position: 'left',
+          items: [
+            {
+              to: 'docs/programming/container/Container',
+              label: 'Container',
+            },
+            {
+              to: 'docs/programming/Go/Go',
+              label: 'Go',
+            },
+            {
+              to: 'docs/programming/Python/Python',
+              label: 'Python',
+            },
+            {
+              to: 'docs/programming/C++/C++',
+              label: 'C++',
+            },
+            {
+              to: 'docs/programming/database/Cassandra',
+              label: 'Database',
+            },
+          ],
         },
         {
           to: 'docs/linux/Bash',
