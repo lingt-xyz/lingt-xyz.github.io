@@ -38,7 +38,7 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/research/Dictionary',
+          to: 'docs/research/MathTax',
           activeBasePath: 'docs/research',
           label: 'Research',
           position: 'left',
