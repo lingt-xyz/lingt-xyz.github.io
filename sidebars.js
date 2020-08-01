@@ -8,7 +8,7 @@ module.exports = {
     PHIL: ['course/PHIL210']
   },
   TA: ['ta/COMP352'],
-  research: ['research/Dictionary', 'research/MathTax', 'research/Seq2Seq'],
+  research: ['research/Dictionary', 'research/MathTax', 'research/Seq2Seq', 'research/KerasLog'],
   container: ['programming/container/Container', 'programming/container/Docker' ],
   go: ['programming/Go/Why', 'programming/Go/Hello', 
     {
