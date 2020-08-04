@@ -4,8 +4,8 @@ title: TensorFlow Log
 
 #### TensorFlow does not support GPU
 
-For the TensorFlow has a version of 2.0 and above, by default, GPU is supported.
-When use `conda` to install, make sure choose `gpu` version.
+For the TensorFlow 2.0 and above, by default, GPU is supported.
+When use `conda` to install, make sure choose `gpu` build version.
 
 `$conda create -n tf220 python=3.7 anaconda ipykernel tensorflow=2.20=gpu_py37h1a511ff_0`
 
