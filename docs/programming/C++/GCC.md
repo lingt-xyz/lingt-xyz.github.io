@@ -82,7 +82,7 @@ $
 ---
 
 
-## -l
+## -I
 
 `gcc -I` adds include directory of header files.
 
