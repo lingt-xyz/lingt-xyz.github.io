@@ -6,6 +6,10 @@ Two things need to be done.
 
 <!--truncate-->
 
+:::info
+This page is rendered by Docusaurus; however, the syntax is for Jekyll.
+:::
+
 1. Config inline mode, so we can use `$$`
     ```html
     <script type="text/x-mathjax-config">
@@ -41,10 +45,10 @@ Two things need to be done.
 
 * Inline
 
-    $ a^2 + b^2 = c^2 $ --> note that all equations between these tags will not need escaping!
+    $a^2 + b^2 = c^2$ --> note that all equations between these tags will not need escaping!
 
     ```
-    $ a^2 + b^2 = c^2 $ --> note that all equations between these tags will not need escaping! 
+    $a^2 + b^2 = c^2$ --> note that all equations between these tags will not need escaping! 
     ```
 
 * Block
@@ -52,49 +56,49 @@ Two things need to be done.
         
         some text before
 
-        $$ a^2 + b^2 = c^2 $$ 
+        $$a^2 + b^2 = c^2$$ 
 
         some text after.
 
         ```
         some text before 
 
-        $$ a^2 + b^2 = c^2 $$ 
+        $$a^2 + b^2 = c^2$$ 
 
         some text after.
         ```
 
     * Wrong way 1:
 
-        some text before $$ a^2 + b^2 = c^2 $$ some text after.
+        some text before $$a^2 + b^2 = c^2$$ some text after.
 
         ```
-        some text before $$ a^2 + b^2 = c^2 $$ some text after.
+        some text before $$a^2 + b^2 = c^2$$ some text after.
         ```
 
     * Wrong way 2:
         
         some text before 
-        $$ a^2 + b^2 = c^2 $$ 
+        $$a^2 + b^2 = c^2$$ 
         some text after.
 
         ```
         some text before 
-        $$ a^2 + b^2 = c^2 $$ 
+        $$a^2 + b^2 = c^2$$ 
         some text after.
         ```
 
 ### Examples:
 * Special symbols
-    1. $ \\\{\\\} $
+    1. $\\\{\\\}$
 
         ```
-        $ \\\{\\\} $
+        $\\\{\\\}$
         ```
 
-    2. $ \|\| $
+    2. $\|\|$
         ```
-        $ \|\| $
+        $\|\|$
         ```
 
 * Indent
