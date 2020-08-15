@@ -101,7 +101,7 @@ This page is rendered by Docusaurus; however, the syntax is for Jekyll.
         $\|\|$
         ```
 
-* Indent
+* Indent (did not work with Docusaurus)
 
     1. Must contain 0: 
 
