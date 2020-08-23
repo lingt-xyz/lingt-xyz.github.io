@@ -44,6 +44,12 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'docs/ml/Course',
+          activeBasePath: 'docs/ml',
+          label: 'Machine Learning',
+          position: 'left',
+        },
+        {
           // to: 'docs/programming/Go',
           // activeBasePath: 'docs/programming',
           label: 'Programming',

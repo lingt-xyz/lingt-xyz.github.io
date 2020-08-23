@@ -9,6 +9,7 @@ module.exports = {
   },
   TA: ['ta/COMP352'],
   research: ['research/Dictionary', 'research/MathTax', 'research/Seq2Seq', 'research/KerasLog', 'research/TFLog'],
+  ml: ['ml/Course'],
   container: ['programming/container/Container', 'programming/container/Docker' ],
   go: ['programming/Go/Why', 'programming/Go/Hello', 
     {
