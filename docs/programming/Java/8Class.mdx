@@ -1,0 +1,210 @@
+---
+title: Class
+---
+
+## Definition
+
+```java
+class MyClass[ extends MySuperClass[ implements YourInterface[, AnotherInterface]]] {
+    // field, constructor, and
+    // method declarations
+}
+
+/**
+ * minimal declaration
+ */
+
+class MyClass {
+    // field, constructor, and 
+    // method declarations
+}
+```
+
+## Example
+
+```java
+class Parent {
+}
+```
+
+## Member Variables
+
+There are several kinds of variables:
+
+* Member variables in a class—these are called fields.
+* Variables in a method or block of code—these are called local variables.
+* Variables in method declarations—these are called parameters.
+
+### Access Modifiers
+
+The first \(left-most\) modifier used lets you control what other classes have access to a member field. For the moment, consider only `public` and `private`. Other access modifiers will be discussed later.
+
+* `public` modifier—the field is accessible from all classes.
+* `private` modifier—the field is accessible only within its own class.
+
+### Example
+
+```java
+class Parent {
+    private int age;
+    
+    public int getAge() {
+        return this.age;
+    }
+        
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+```
+
+## Methods
+
+### Method Signature
+
+The **method's name** and the **parameter types** comprise the method signature.
+
+### Overloading Methods
+
+```java
+class Parent {
+    public void say(String message){
+    }
+    
+    public void say(String[] messages){
+    }
+}
+```
+
+## Constructors
+
+Constructor declarations look like method declarations—except that they use the **name of the class** and have **no return type**.
+
+Constructors can be:
+
+* Default constructor: if you did not define a constructor, the compiler will create a default one with no parameters.
+* No-argument constructor: a constructor without any parameters.
+* Parameterized constructor: a constructor accepts parameters.
+* Copy constructor: a constructor accepts an object with the same type as its parameter.
+
+```java
+class Parent {
+    private String name;
+    private int age;
+    
+    // No-argument constructor
+    public Parent(){
+    }
+    
+    // Parameterized Constructor
+    public Parent(String name){
+        this.name = name;
+    }
+    
+    // Parameterized Constructor
+    public Parent(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+    
+    // Copy Constructor
+    public Parent(Parent p){
+        this.name = p.name;
+        this.age = age;
+    }
+}
+```
+
+## Passing Parameters
+
+### By Reference or By Value?
+
+{% hint style="warning" %}
+Java always passes arguments by **value**.
+{% endhint %}
+
+### Definitions
+
+#### Reference
+
+> [A data element whose value is an address.](https://docs.oracle.com/javase/tutorial/information/glossary.html#reference)
+
+```java
+Object o = new Object();
+```
+
+Here, `o` is a reference, and its value is _an address_.
+
+#### Value
+
+The literal value.
+
+```java
+int i = 1;
+```
+
+Here, `i` is a primitive type not a reference, and its value is `1`.
+
+### Passing Primitive Data Type Arguments
+
+Primitive arguments, such as an `int` or a `double`, are passed into methods by **value**.
+
+```java
+public class PassPrimitiveByValue {
+
+    public static void main(String[] args) {
+           
+        int x = 3;
+           
+        // invoke passMethod() with  x as argument
+        passMethod(x);
+           
+        // print x to see if its value has changed
+        System.out.println("After invoking passMethod, x = " + x);
+           
+    }
+        
+    // change parameter in passMethod()
+    public static void passMethod(int p) {
+        p = 10;
+    }
+}
+```
+
+When you run this program, the output is:
+
+```text
+After invoking passMethod, x = 3
+```
+
+### Passing Reference Data Type Arguments
+
+Reference data type parameters, such as objects, are also passed into methods by **value**.
+
+:::info
+Recall that value is an address. 🙋♂ 
+:::
+
+```java
+public class Main {
+     public static void main(String[] args) {
+          Foo f = new Foo("f");
+          changeReference(f); // It won't change the reference!
+          modifyReference(f); // It will change the object that the reference refers to!
+     }
+     public static void changeReference(Foo a) {
+          Foo b = new Foo("b");
+          a = b;
+     }
+     public static void modifyReference(Foo c) {
+          c.setAttribute("c");
+     }
+}
+```
+
+https://stackoverflow.com/questions/7893492/is-java-really-passing-objects-by-value/7893495#7893495
+
+https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html
+
+
+

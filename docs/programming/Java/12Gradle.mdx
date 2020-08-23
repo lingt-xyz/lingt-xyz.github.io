@@ -1,0 +1,210 @@
+---
+title: Gradle
+---
+
+[Gradle](https://docs.gradle.org/current/userguide/userguide.html) is an open-source **build automation** tool focused on flexibility and performance.
+
+## Getting Started
+
+### Prerequisites
+
+* JRE &gt;= 1.8
+  * `java -version`
+* Gradle &gt;= 4.10.3
+  * `gradle -version`
+
+### Initialize a project
+
+```text
+% mkdir basic-demo
+% cd basic-demo
+% gradle init
+```
+
+#### What Gradle generated for you
+
+```groovy
+├── build.gradle  
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar  
+│       └── gradle-wrapper.properties  
+├── gradlew  
+├── gradlew.bat  
+└── settings.gradle  
+```
+
+* `build.gradle` : Gradle build script for configuring the current project
+* `gradle-wrapper.jar`: [Gradle Wrapper](https://docs.gradle.org/4.10.3/userguide/gradle_wrapper.html) executable JAR
+* `gradle-wrapper.properties`: Gradle Wrapper configuration properties
+* `gradlew`: Gradle Wrapper script for Unix-based systems
+* `gradlew.bat`: Gradle Wrapper script for Windows
+* `settings.gradle`: Gradle settings script for configuring the Gradle build
+
+### Create a task
+
+1. Create a directory called `src`.
+2. Add a file called `myfile.txt` in the `src` directory. Add the single line `Hello, World!` to it.
+3. Define a task called `copy` of type `Copy` in your build file `build.gradle` that copied the `src` directory to a new directory called `dest`. \(You don't have to create the `dest` directory, the task will do it for you.\)
+
+```groovy title="build.gradle"
+task copy(type: Copy, group: "Custom", description: "Copies sources to the dest directory") {
+    from "src"
+    into "dest"
+}
+```
+
+#### Run a task
+
+```bash
+% ./gradlew copy
+> Task :copy
+
+BUILD SUCCESSFUL in 0s
+1 actionable task: 1 executed
+```
+
+### References
+
+* [Creating New Gradle Builds](https://guides.gradle.org/creating-new-gradle-builds/)
+
+## Building Java Libraries
+
+### Prerequisites
+
+* JRE &gt;= 1.8
+  * `java -version`
+* Gradle &gt;= 5.0
+  * `gradle -version`
+
+### Initialize a library project
+
+From inside the new project directory, run the `init` task and select `java-library` project type when prompted.
+
+```bash
+% mkdir demo
+% cd demo
+% gradle init
+
+Select type of project to generate:
+  1: basic
+  2: cpp-application
+  3: cpp-library
+  4: groovy-application
+  5: groovy-library
+  6: java-application
+  7: java-library
+  8: kotlin-application
+  9: kotlin-library
+  10: scala-library
+Enter selection (default: basic) [1..10] 7
+
+Select build script DSL:
+  1: groovy
+  2: kotlin
+Enter selection (default: groovy) [1..2]
+
+Select test framework:
+  1: junit
+  2: testng
+  3: spock
+Enter selection (default: junit) [1..3]
+
+Project name (default: demo):
+
+Source package (default: demo):
+
+
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 executed
+```
+
+#### What Gradle generated for you
+
+```text
+├── build.gradle
+├── gradle
+│   └── wrapper 
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradlew
+├── gradlew.bat
+├── settings.gradle
+└── src
+    ├── main
+    │   └── java 
+    │       └── demo
+    │           └── Library.java
+    └── test
+        └── java 
+            └── demo
+                └── LibraryTest.java
+```
+
+* `src/main/java`: Default Java source folder
+* `src/test/java`: Default Java test folder
+
+### Review the generated project files
+
+```groovy title="settings.gradle"
+rootProject.name = 'building-java-libraries'
+```
+
+* This assigns the name of the project.
+
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    jcenter() 
+}
+
+dependencies {
+    api 'org.apache.commons:commons-math3:3.6.1' 
+
+    implementation 'com.google.guava:guava:27.0.1-jre' 
+
+    testImplementation 'junit:junit:4.12' 
+}
+```
+
+* `repositories`: Public Bintray Artifactory repository
+* `api 'org.apache.commons:commons-math3:3.6.1'`: This is an example of a dependency which is exported to consumers, that is to say found on their compile classpath.
+* `implementation 'com.google.guava:guava:27.0.1-jre'`: This is an example of a dependency which is used internally, and not exposed to consumers on their own compile classpath.
+* `testImplementation 'junit:junit:4.12'`: JUnit testing library
+
+### Assemble the library JAR
+
+```bash
+$ ./gradlew build
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+> Task :jar
+> Task :assemble
+> Task :compileTestJava
+> Task :processTestResources NO-SOURCE
+> Task :testClasses
+> Task :test
+> Task :check
+> Task :build
+
+BUILD SUCCESSFUL in 11s
+4 actionable tasks: 4 executed
+```
+
+You can find your newly packaged JAR file in the `build/libs` directory with the name `building-java-libraries.jar`. Verify that the archive is valid by running the following command:
+
+```bash
+$ jar tf build/libs/building-java-libraries.jar
+META-INF/
+META-INF/MANIFEST.MF
+Library.class
+```
+
+### References
+
+* [Building Java Libraries](https://guides.gradle.org/building-java-libraries/)
+

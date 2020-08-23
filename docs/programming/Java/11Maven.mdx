@@ -1,0 +1,106 @@
+---
+title: Maven
+---
+
+[Apache Maven](https://maven.apache.org/) is a software **project management** and comprehension tool.
+
+## Getting Started
+
+### Prerequisites
+
+* JRE
+  * `java -version`
+* Maven
+  * `mvn --version`
+
+### Initialize a project
+
+```text
+$ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+```
+
+#### What Maven generated for you
+
+```groovy
+my-app
+|-- pom.xml
+`-- src
+    |-- main
+    |   `-- java
+    |       `-- com
+    |           `-- mycompany
+    |               `-- app
+    |                   `-- App.java
+    `-- test
+        `-- java
+            `-- com
+                `-- mycompany
+                    `-- app
+                        `-- AppTest.java
+```
+
+* `pom.xml`: the core of a project's configuration in Maven
+* `src/main/java`: Default Java source folder
+* `src/test/java`: Default Java test folder
+
+
+### **Review the generated project files**
+
+```markup title="pom.xml"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1.0-SNAPSHOT</version>
+ 
+  <properties>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+ 
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+### **Assemble the library JAR**
+
+```bash
+$ mvn package
+
+ ...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.953 s
+[INFO] Finished at: 2019-11-24T13:05:10+01:00
+[INFO] ------------------------------------------------------------------------
+```
+
+This is a phase. A phase is a step in the [build lifecycle](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html), which is an ordered sequence of phases. When a phase is given, Maven will execute every phase in the sequence up to and including the one defined. For example, if we execute the compile phase, the phases that actually get executed are:
+
+1. validate
+2. generate-sources
+3. process-sources
+4. generate-resources
+5. process-resources
+6. compile
+
+You may test the newly compiled and packaged JAR with the following command:
+
+```bash
+$ java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
+```
+
+### **References**
+
+* [Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+

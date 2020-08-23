@@ -68,6 +68,10 @@ module.exports = {
               label: 'Python',
             },
             {
+              to: 'docs/programming/Java/1IDE',
+              label: 'Java',
+            },
+            {
               to: 'docs/programming/C++/C++',
               label: 'C++',
             },

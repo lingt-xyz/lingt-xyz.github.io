@@ -1,0 +1,300 @@
+---
+title: Variable
+---
+
+## Kinds of Variables
+
+### 1 **Instance Variables \(Non-Static Fields\)** 
+
+Technically speaking, objects store their individual states in "non-static fields", that is, fields declared without the `static` keyword. Non-static fields are also known as instance variables because their values are unique to each instance of a class \(to each object, in other words\); the `currentSpeed` of one bicycle is independent from the `currentSpeed` of another.
+
+### 2 Class Variables \(Static Fields\) 
+
+A class variable is any field declared with the `static` modifier; this tells the compiler that there is exactly one copy of this variable in existence, regardless of how many times the class has been instantiated. A field defining the number of gears for a particular kind of bicycle could be marked as `static` since conceptually the same number of gears will apply to all instances. The code `static int numGears = 6;` would create such a static field. Additionally, the keyword `final` could be added to indicate that the number of gears will never change.
+
+### 3 **Local Variables**
+
+Similar to how an object stores its state in fields, a method will often store its temporary state in local variables. The syntax for declaring a local variable is similar to declaring a field \(for example, `int count = 0;`\). There is no special keyword designating a variable as local; that determination comes entirely from the **location** in which the variable is declared — which is between the opening and closing braces of a method. As such, local variables are only visible to the methods in which they are declared; they are not accessible from the rest of the class.
+
+### 4 **Parameters**
+
+Recall that the signature for the `main` method is `public static void main(String[] args)`. Here, the `args` variable is the parameter to this method. The important thing to remember is that parameters are always classified as "variables" not "fields". This applies to other parameter-accepting constructs as well \(such as constructors and exception handlers\) .
+
+## Naming Convention
+
+Variable names are case-sensitive.
+
+1. Begin with a letter.
+2. Use full words instead of cryptic abbreviations.
+3. If the name consists of only one word, spell that word in all lowercase. If it consists of more than one word, capitalize the first letter of each subsequent word. If it stores a constant value, capitalizing every letter and separating subsequent words with the underscore character.
+
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html
+
+## Primitive Data Types
+
+### Eight Primitive Data Types
+
+* **byte**: The `byte` data type is an 8-bit signed two's complement integer. 
+  * $$2^8=256$$
+  * It has a minimum value of -128 and a maximum value of 127 \(inclusive\).
+* **short**: The `short` data type is a 16-bit signed two's complement integer. 
+  * $$2^{16}=65536$$
+  * It has a minimum value of -32,768 and a maximum value of 32,767 \(inclusive\).
+* **int**: By default, the `int` data type is a 32-bit signed two's complement integer.
+  * It has a minimum value of$$-2^{31}$$and a maximum value of$$2^{31}-1$$.
+  * In Java SE 8 and later, you can use the `int` data type to represent an unsigned 32-bit integer, which has a minimum value of$$0$$and a maximum value of $$2^{32}-1$$. Use the Integer class to use `int` data type as an unsigned integer. Static methods like `compareUnsigned`, `divideUnsigned` etc have been added to the [`Integer`](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html) class to support the arithmetic operations for unsigned integers.
+* **long**: The `long` data type is a 64-bit two's complement integer. 
+  * The signed long has a minimum value of $$-2^{63}$$ and a maximum value of $$2^{63}-1$$. 
+  * In Java SE 8 and later, you can use the `long` data type to represent an unsigned 64-bit long, which has a minimum value of $$0$$ and a maximum value of $$2^{64}-1$$. The [`Long`](https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html) class also contains methods like `compareUnsigned`, `divideUnsigned` etc to support arithmetic operations for unsigned long.
+* **float**: The `float` data type is a single-precision 32-bit IEEE 754 floating point. 
+  * Its range of values is specified in the [Floating-Point Types, Formats, and Values](https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.2.3) section of the Java Language Specification.
+  * This data type should _**never**_ be used for precise values, such as currency. For that, you will need to use the [java.math.BigDecimal](https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html) class instead.
+* **double**: The `double` data type is a double-precision 64-bit IEEE 754 floating point. 
+  * Its range of values is specified in the [Floating-Point Types, Formats, and Values](https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.2.3) section of the Java Language Specification. 
+  * For decimal values, this data type is generally the default choice.
+  * This data type should _**never**_ be used for precise values, such as currency.
+* **boolean**: The `boolean` data type has only two possible values: `true` and `false`.
+  * This data type represents one bit of information, but its "size" isn't something that's precisely defined.
+* **char**: The `char` data type is a single 16-bit Unicode character. 
+  * $${16}^4=65536$$
+  * It has a minimum value of `'\u0000'` \(or 0\) and a maximum value of `'\uffff'` \(or 65,535 inclusive\).
+
+### Default Values
+
+#### Fields
+
+| **Data Type** | **Default Value \(for fields\)** |
+| :--- | :--- |
+| byte | 0 |
+| short | 0 |
+| int | 0 |
+| long | 0L |
+| float | 0.0f |
+| double | 0.0d |
+| char | '\u0000' |
+| String \(or any object\)   | null |
+| boolean | false |
+
+#### Local Variables
+
+The compiler never assigns a default value to an uninitialized local variable. Accessing an uninitialized local variable will result in a compile-time error.
+
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+
+## String
+
+The Java programming language provides special support for character strings via the [java.lang.String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html) class. Enclosing your character string within double quotes will automatically create a new `String` object; for example, `String s = "this is a string";`. `String` objects are **immutable**, which means that once created, their values **cannot be changed**. The `String` class is not technically a primitive data type.
+
+String as a field of a class would have `null` as default value.
+
+:::caution
+`==` or `equals`❓ 
+:::
+
+```java
+String s1 = "abc";
+String s2 = "abc";
+String s3 = new String("abc");
+System.out.println(s1 == s2);
+System.out.println(s1.equals(s2));
+System.out.println(s1 == s3);
+System.out.println(s1.equals(s3));
+
+// output
+true
+true
+false
+true
+```
+
+> Java uses [String interning](https://en.wikipedia.org/wiki/String_interning) to store string literals.
+
+It means:
+
+1. There is a pool, String literal pool, storing all String literals.
+2. When a new String literal was created, the JVM will look for this String literal from the String literal pool.
+   1. If an equivalent String literal is found, the reference to the newly created String literal would be simply updated. \(That's why `==` would return `true`.\)
+   2. If not, this new String literal would be added to the String literal pool and its reference would be returned.
+
+#### What about `new`
+
+If `new` is used, the JVM is obliged to create a new String object. \(That's why `==` would return `false`.\)
+
+### A deeper look
+
+```text
+package testPackage;
+class Test {
+    public static void main(String[] args) {
+        String hello = "Hello", lo = "lo";
+        System.out.print((hello == "Hello") + " ");
+        System.out.print((Other.hello == hello) + " ");
+        System.out.print((other.Other.hello == hello) + " ");
+        System.out.print((hello == ("Hel"+"lo")) + " ");
+        System.out.print((hello == ("Hel"+lo)) + " ");
+        System.out.println(hello == ("Hel"+lo).intern());
+    }
+}
+class Other { static String hello = "Hello"; }
+```
+
+```text
+package other;
+public class Other { public static String hello = "Hello"; }
+```
+
+The output:
+
+```text
+true true true true false true
+```
+
+### How many Strings
+
+```java
+String s1 = "abc";
+String s2 = "abc";
+// two Strings
+
+String s3 = new String("def");
+// tow more Strings
+
+String s4 = new String("abc");
+// one more String
+
+String s5 = new String(s4);
+// one more String
+
+s5.intern();
+// now?
+```
+
+### Conclusion
+
+* Literal strings within the same class \([§8](https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html)\) in the same package \([§7](https://docs.oracle.com/javase/specs/jls/se7/html/jls-7.html)\) represent references to the same `String` object \([§4.3.1](https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.3.1)\).
+* Literal strings within different classes in the same package represent references to the same `String` object.
+* Literal strings within different classes in different packages likewise represent references to the same `String` object.
+* Strings computed by constant expressions \([§15.28](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.28)\) are computed at compile time and then treated as if they were literals.
+* Strings computed by concatenation at run time are newly created and therefore distinct.
+* The result of explicitly interning a computed string is the same string as any pre-existing literal string with the same contents.
+
+https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#intern()
+
+https://en.wikipedia.org/wiki/String_interning
+
+https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.5
+
+## Array
+
+An array is a container object that holds a fixed number of values of a single type. The length of an array is established when the array is created. After creation, its length is fixed.
+
+### Declaration
+
+```java
+// declare an array of integers
+int[] anArray;
+```
+
+### Creating
+
+```java
+// create an array of integers
+anArray = new int[10]
+```
+
+### Initializing
+
+```java
+anArray[0] = 100; // initialize first element
+anArray[1] = 200; // initialize second element
+anArray[2] = 300; // and so forth
+```
+
+or
+
+```java
+int[] anArray = { 
+    100, 200, 300,
+    400, 500, 600, 
+    700, 800, 900, 1000
+};
+```
+
+### Arrays Manipulations
+
+The `System` class has an `arraycopy` method that you can use to efficiently copy data from one array into another:
+
+```java
+public static void arraycopy(Object src, int srcPos,
+                             Object dest, int destPos, int length)
+```
+
+```java
+class ArrayCopyDemo {
+    public static void main(String[] args) {
+        char[] copyFrom = { 'd', 'e', 'c', 'a', 'f', 'f', 'e',
+			    'i', 'n', 'a', 't', 'e', 'd' };
+        char[] copyTo = new char[7];
+
+        System.arraycopy(copyFrom, 2, copyTo, 0, 7);
+        System.out.println(new String(copyTo));
+    }
+}
+
+// The output from this program is:
+
+caffein
+```
+
+Java SE provides several methods for performing array manipulations \(common tasks, such as copying, sorting and searching arrays\) in the [`java.util.Arrays`](https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html) class.
+
+The previous example can be modified to use the `copyOfRange` method of the `java.util.Arrays` class, as you can see in the [`ArrayCopyOfDemo`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/examples/ArrayCopyOfDemo.java) example. The difference is that using the `copyOfRange` method does not require you to create the destination array before calling the method, because the destination array is returned by the method:
+
+```java
+class ArrayCopyOfDemo {
+    public static void main(String[] args) {
+        
+        char[] copyFrom = {'d', 'e', 'c', 'a', 'f', 'f', 'e',
+            'i', 'n', 'a', 't', 'e', 'd'};
+            
+        char[] copyTo = java.util.Arrays.copyOfRange(copyFrom, 2, 9);
+        
+        System.out.println(new String(copyTo));
+    }
+}
+```
+
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html
+
+
+## Constant Expressions
+
+A compile-time _constant expression_ is an expression denoting a value of primitive type or a `String` that does not complete abruptly and is composed using only the following:
+
+* Literals of primitive type and literals of type `String` \([§3.10.1](https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.1), [§3.10.2](https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.2), [§3.10.3](https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.3), [§3.10.4](https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.4), [§3.10.5](https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.5)\)
+* Casts to primitive types and casts to type `String` \([§15.16](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.16)\)
+* The unary operators `+`, `-`, `~`, and `!` \(but not `++` or `--`\) \([§15.15.3](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.15.3), [§15.15.4](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.15.4), [§15.15.5](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.15.5), [§15.15.6](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.15.6)\)
+* The multiplicative operators `*`, `/`, and `%` \([§15.17](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.17)\)
+* The additive operators `+` and `-` \([§15.18](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.18)\)
+* The shift operators `<<`, `>>`, and `>>>` \([§15.19](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.19)\)
+* The relational operators `<`, `<=`, `>`, and `>=` \(but not `instanceof`\) \([§15.20](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.20)\)
+* The equality operators `==` and `!=` \([§15.21](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.21)\)
+* The bitwise and logical operators `&`, `^`, and `|` \([§15.22](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.22)\)
+* The conditional-and operator `&&` and the conditional-or operator `||` \([§15.23](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.23), [§15.24](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.24)\)
+* The ternary conditional operator `? :` \([§15.25](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.25)\)
+* Parenthesized expressions \([§15.8.5](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.8.5)\) whose contained expression is a constant expression.
+* Simple names \([§6.5.6.1](https://docs.oracle.com/javase/specs/jls/se7/html/jls-6.html#jls-6.5.6.1)\) that refer to constant variables \([§4.12.4](https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.4)\).
+* Qualified names \([§6.5.6.2](https://docs.oracle.com/javase/specs/jls/se7/html/jls-6.html#jls-6.5.6.2)\) of the form _TypeName_ `.` _Identifier_ that refer to constant variables \([§4.12.4](https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.4)\).
+
+Compile-time constant expressions of type `String` are always "interned" so as to share unique instances, using the method `String.intern`.
+
+```text
+true
+(short)(1*2*3*4*5*6)
+Integer.MAX_VALUE / 2
+2.0 * Math.PI
+"The integer " + Long.MAX_VALUE + " is mighty big."
+```
+
+https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.28
+

@@ -1,0 +1,327 @@
+---
+title: Inheritance
+---
+
+## **Definitions**
+
+A class that is derived from another class is called a subclass \(also a derived class, extended class, or child class\). The class from which the subclass is derived is called a superclass \(also a base class or a parent class\).
+
+* Superclass$$\equiv$$Base class$$\equiv$$Parent class
+* Subclass$$\equiv$$Derived class$$\equiv$$Child class
+
+Excepting `Object`, which has no superclass, every class has one and only one direct superclass \(single inheritance\).
+
+A subclass inherits all the members \(fields, methods, and nested classes\) from its superclass. Constructors are not members, so they are not inherited by subclasses, but the constructor of the superclass can be invoked from the subclass.
+
+## Subclass
+
+What You Can Do in a Subclass?
+
+A subclass inherits all of the public and protected members of its parent, no matter what package the subclass is in. If the subclass is in the same package as its parent, it also inherits the package-private members of the parent. You can use the inherited members as is, replace them, hide them, or supplement them with new members:
+
+* You can declare a **field** in the subclass with the same name as the one in the superclass, thus **hiding** it \(not recommended\).
+* You can declare new fields in the subclass that are not in the superclass.
+* The inherited methods can be used directly as they are.
+* You can write a new **instance method** in the subclass that has the same signature as the one in the superclass, thus **overriding** it.
+* You can write a new **static method** in the subclass that has the same signature as the one in the superclass, thus **hiding** it.
+* You can declare new methods in the subclass that are not in the superclass.
+* You can write a subclass constructor that invokes the constructor of the superclass, either implicitly or by using the keyword `super`.
+
+A nested class has access to all the private members of its enclosing class—both fields and methods. Therefore, a public or protected nested class inherited by a subclass has indirect access to all of the private members of the superclass.
+
+## Polymorphism
+
+### Method Override
+
+### Source Code
+
+```java title="Test.java"
+public class Test {
+    private static class Parent {
+        public void print() {
+            System.out.println("Parent");
+        }
+    }
+
+    private static class Child extends Parent{
+        public void print() {
+            System.out.println("Child");
+        }
+    }
+
+    public static void main(String[] args) {
+        Parent o = new Child();
+        o.print();
+    }
+}
+```
+
+### Output
+
+Run the following commands.
+
+```bash
+javac Test.java
+# You should see the following four files now.
+# 'Test$Child.class'  'Test$Parent.class'   Test.class   Test.java
+
+# disassembles Test class file
+javap -verbose Test
+```
+
+The complete output of`javap -verbose Test` is in the last section. Here we only focus on two parts.
+
+#### **Constant Pool**
+
+```bash
+Constant pool:
+   #1 = Methodref          #6.#20         // java/lang/Object."<init>":()V
+   #2 = Class              #21            // Test$Child
+   #3 = Methodref          #2.#20         // Test$Child."<init>":()V
+   #4 = Methodref          #9.#22         // Test$Parent.print:()V
+   #5 = Class              #23            // Test
+   #6 = Class              #24            // java/lang/Object
+   #7 = Utf8               Child
+   #8 = Utf8               InnerClasses
+   #9 = Class              #25            // Test$Parent
+  #10 = Utf8               Parent
+  #11 = Utf8               <init>
+  #12 = Utf8               ()V
+  #13 = Utf8               Code
+  #14 = Utf8               LineNumberTable
+  #15 = Utf8               main
+  #16 = Utf8               ([Ljava/lang/String;)V
+  #17 = Utf8               SourceFile
+  #18 = Utf8               Test.java
+  #19 = Utf8               NestMembers
+  #20 = NameAndType        #11:#12        // "<init>":()V
+  #21 = Utf8               Test$Child
+  #22 = NameAndType        #26:#12        // print:()V
+  #23 = Utf8               Test
+  #24 = Utf8               java/lang/Object
+  #25 = Utf8               Test$Parent
+  #26 = Utf8               print
+```
+
+#### Bytecode
+
+```bash
+  public Test();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 1: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=1
+         0: new           #2                  // class Test$Child
+         3: dup
+         4: invokespecial #3                  // Method Test$Child."<init>":()V
+         7: astore_1
+         8: aload_1
+         9: invokevirtual #4                  // Method Test$Parent.print:()V
+        12: return
+      LineNumberTable:
+        line 15: 0
+        line 16: 8
+        line 17: 12
+```
+
+### Bytecode Tear Down
+
+Bytecode contains two parts: the constructor and the method.
+
+#### The Constructor
+
+```bash
+  public Test();
+    # it takes no argrments and it returns nothing.
+    descriptor: ()V
+    # it's public
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         # implicitly invoke super(), which would call new Object() because every class inherits Object
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 1: 0
+```
+
+#### The Method
+
+```bash
+  public static void main(java.lang.String[]);
+    # it takes a String as an arguments and it returns nothing.
+    descriptor: ([Ljava/lang/String;)V
+    # it's public and static
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=1
+         # this is a Child object
+         0: new           #2                  // class Test$Child
+         3: dup
+         # call Child constructor
+         4: invokespecial #3                  // Method Test$Child."<init>":()V
+         7: astore_1
+         8: aload_1
+         # call Parent print method
+         9: invokevirtual #4                  // Method Test$Parent.print:()V
+        12: return
+      LineNumberTable:
+        line 15: 0
+        line 16: 8
+        line 17: 12
+```
+
+:::caution
+Why `Parent` print method is called instead of `Child`'s?
+
+```bash
+9: invokevirtual #4                  // Method Test$Parent.print:()V
+```
+
+Because that is all the compiler knows.
+
+* The compiler knows `o` is `Parent` type, so it calls `Parent`'s method.
+:::
+
+#### Constant Pool Tear Down
+
+Let's read a few lines of Constant Pool.
+
+Because the first line of the code is `Parent o = new Child();`, it will call `super();` then it initialized itself.     
+
+```bash
+   #1 = Methodref          #6.#20         // java/lang/Object."<init>":()V
+   #2 = Class              #21            // Test$Child
+   #3 = Methodref          #2.#20         // Test$Child."<init>":()V
+```
+
+More information are available at:
+
+https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-4.html#jvms-4.4
+
+### Polymorphism
+
+From Bytecode, we see that 
+
+```bash
+9: invokevirtual #4                  // Method Test$Parent.print:()V
+```
+
+ is going to be called, which is `Parent.print` . 
+
+But polymorphism gives us a different result. Why?
+
+#### VTable
+
+If take `C++` approach as JVM's implementation, we can safely assume for each object, there is a _VTable_ corresponding to it.
+
+When we declare `Parent o`, a _VTable_ is created
+
+| Name | Reference |
+| :--- | :--- |
+| Object.toString\(\) | Object.toString\(\) |
+| Object.something else | Object.something else |
+| Parent.print\(\) | Parent.print\(\) |
+
+✍ When `o` was initialized to `Child`, `Parent.print()` would be **updated** to `Child.print()`, resulting the following _VTable_ :
+
+| Name | Reference |
+| :--- | :--- |
+| Object.toString\(\) | Object.toString\(\) |
+| Object.something else | Object.something else |
+| Parent.print\(\) | **Child.print\(\)** |
+
+JVM will look up this _VTable_ at running time to find `#4 Test$Parent.print` and would find that it's actually pointing to `Child.print()`. That's why it's called _running time binding_ or _dynamic binding_, or _late binding._
+
+### Complete Output
+
+```bash
+Classfile $FULL_PATH_OF_THE_PROJECT/src/Test.class
+  Last modified $DATE; size 411 bytes
+  MD5 checksum dc8d7bc4039d222f5ff3d99c6bf3897d
+  Compiled from "Test.java"
+public class Test
+  minor version: 0
+  major version: 55
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #5                          // Test
+  super_class: #6                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 2, attributes: 3
+Constant pool:
+   #1 = Methodref          #6.#20         // java/lang/Object."<init>":()V
+   #2 = Class              #21            // Test$Child
+   #3 = Methodref          #2.#20         // Test$Child."<init>":()V
+   #4 = Methodref          #9.#22         // Test$Parent.print:()V
+   #5 = Class              #23            // Test
+   #6 = Class              #24            // java/lang/Object
+   #7 = Utf8               Child
+   #8 = Utf8               InnerClasses
+   #9 = Class              #25            // Test$Parent
+  #10 = Utf8               Parent
+  #11 = Utf8               <init>
+  #12 = Utf8               ()V
+  #13 = Utf8               Code
+  #14 = Utf8               LineNumberTable
+  #15 = Utf8               main
+  #16 = Utf8               ([Ljava/lang/String;)V
+  #17 = Utf8               SourceFile
+  #18 = Utf8               Test.java
+  #19 = Utf8               NestMembers
+  #20 = NameAndType        #11:#12        // "<init>":()V
+  #21 = Utf8               Test$Child
+  #22 = NameAndType        #26:#12        // print:()V
+  #23 = Utf8               Test
+  #24 = Utf8               java/lang/Object
+  #25 = Utf8               Test$Parent
+  #26 = Utf8               print
+{
+  public Test();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 1: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=1
+         0: new           #2                  // class Test$Child
+         3: dup
+         4: invokespecial #3                  // Method Test$Child."<init>":()V
+         7: astore_1
+         8: aload_1
+         9: invokevirtual #4                  // Method Test$Parent.print:()V
+        12: return
+      LineNumberTable:
+        line 15: 0
+        line 16: 8
+        line 17: 12
+}
+SourceFile: "Test.java"
+NestMembers:
+  Test$Child
+  Test$Parent
+```
+
+:::info
+You may notice that there isn't that much information about the inner classes `Parent` and `Child`. This is because they are compiled to the other two files:`Test$Parent.class` and `Test$Child.class`.
+:::
+
