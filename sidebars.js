@@ -7,7 +7,7 @@ module.exports = {
     SOEN: ['course/SOEN321', 'course/SOEN321_Project'],
     PHIL: ['course/PHIL210']
   },
-  TA: ['ta/COMP352'],
+  TA: ['ta/COMP352', 'ta/COMP249'],
   research: ['research/Dictionary', 'research/MathTax', 'research/Seq2Seq', 'research/KerasLog', 'research/TFLog'],
   ml: ['ml/Course'],
   container: ['programming/container/Container', 'programming/container/Docker' ],
