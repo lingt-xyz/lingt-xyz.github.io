@@ -60,7 +60,7 @@ module.exports = {
               label: 'Container',
             },
             {
-              to: 'docs/programming/Go/Why',
+              to: 'docs/programming/Go/1Why',
               label: 'Go',
             },
             {
