@@ -56,4 +56,55 @@ done
 0
 ```
 
- To learn more about defer statements read this [blog post](https://blog.golang.org/defer-panic-and-recover).
+## Defer in For loop
+
+https://stackoverflow.com/a/45620423/12339035
+
+Question:
+```go
+for rows.Next() {
+
+   fields, err := db.Query(.....)
+   if err != nil {
+      // ...
+   }
+   defer fields.Close()
+
+   // do something with `fields`
+
+}
+```
+
+Right approach:
+```go
+for rows.Next() {
+    func() {
+        fields, err := db.Query(...)
+        if err != nil {
+            // Handle error and return
+            return
+        }
+        defer fields.Close()
+
+        // do something with `fields`
+    }()
+}
+```
+
+Wrong approach:
+```go
+for rows.Next() {
+
+   fields, err := db.Query(.....)
+   if err != nil {
+      // ...
+   }
+
+   // do something with `fields`
+
+   fields.Close()
+}
+```
+
+
+To learn more about defer statements read this [blog post](https://blog.golang.org/defer-panic-and-recover).

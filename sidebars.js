@@ -12,7 +12,7 @@ module.exports = {
   ml: ['ml/Course'],
   container: ['programming/container/Container', 'programming/container/Docker' ],
   go: ['programming/Go/1Why', 'programming/Go/2Hello', 
-    'programming/Go/3_1Package', 'programming/Go/3_2Basic_Type', 'programming/Go/3_3Variable', 
+    'programming/Go/3_1Package', 'programming/Go/3_2Basic_Type', 'programming/Go/3_3Variable', 'programming/Go/3_3_1Operator', 
     'programming/Go/3_4Function', 'programming/Go/3_5Condition', 'programming/Go/3_6Defer', 'programming/Go/3_7Pointer', 
     'programming/Go/3_8Struct', 'programming/Go/3_9Array', 'programming/Go/3_10Map', 'programming/Go/3_11New_Make',
     {

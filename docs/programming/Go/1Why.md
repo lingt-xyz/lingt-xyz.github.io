@@ -28,3 +28,4 @@ title: Go
 - [Effective Go](https://golang.org/doc/effective_go.html)
 - [Style guideline for Go packages](https://rakyll.org/style-packages/)
 - [Logging and instrumentation](https://peter.bourgon.org/go-best-practices-2016/#logging-and-instrumentation)
+- [Go go-to guide](https://yourbasic.org/golang/)

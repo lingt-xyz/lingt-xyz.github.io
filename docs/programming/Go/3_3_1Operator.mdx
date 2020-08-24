@@ -1,0 +1,80 @@
+---
+title: Operator
+---
+
+## Arithmetic
+
+|Operator	|Name	|Types
+| ------------- |-------------| -----|
+|+	|sum	|integers, floats, complex values, strings
+|-	|difference	|integers, floats, complex values
+|*	|product	|integers, floats, complex values
+|/	|quotient	|integers, floats, complex values
+|%	|remainder	|integers
+|&	|bitwise AND |integers
+|\|	|bitwise OR	|integers
+|^	|bitwise XOR |integers
+|&^	|bit clear (AND NOT) |integers	
+|<<	|left shift	|integer << unsigned integer
+|>>	|right shift	|integer >> unsigned integer
+
+:::caution
+GO does provide implicit numberic conversions. ([why](https://golang.org/doc/faq#conversions))
+So the following code would not work:
+```go
+x := 1
+y := 1.0
+c := x/y
+```
+
+:::
+## Bitwise operators
+
+|Operation	|Result	|Description
+| ------------- |-------------| -----|
+|0011 & 0101	|0001	|Bitwise AND
+|0011 \| 0101	|0111	|Bitwise OR
+|0011 ^ 0101	|0110	|Bitwise XOR
+|^0101			|1010	|Bitwise NOT (same as 1111 ^ 0101)
+|0011 &^ 0101	|0010	|Bitclear (AND NOT)
+|00110101<<2	|11010100	|Left shift
+|00110101<<100	|00000000	|No upper limit on shift count
+|00110101>>2	|00001101	|Right shift
+
+## Comparison
+
+|Operator	|Name	|Types
+| ------------- |-------------| -----|
+|==	|equal	|comparable
+|!=	|not equal	|comparable
+|<	|less	|integers, floats, strings
+|<=	|less or equal	|integers, floats, strings
+|>	|greater	|integers, floats, strings
+|>=	|greater or equal	|integers, floats, strings
+
+* Boolean, integer, floats, complex values and strings are comparable.
+* Strings are ordered lexically byte-wise.
+* Two pointers are equal if they point to the same variable or if both are nil.
+* Two channel values are equal if they were created by the same call to make or if both are nil.
+* Two interface values are equal if they have identical dynamic types and equal concrete values or if both are nil.
+* A value x of non-interface type X and a value t of interface type T are equal if t’s dynamic type is identical to X and t’s concrete value is equal to x.
+* Two struct values are equal if their corresponding non-blank fields are equal.
+* Two array values are equal if their corresponding elements are equal.
+
+## Logical
+
+|Operator	|Name	|Types
+| ------------- |-------------| -----|
+|&&	|conditional AND	|p && q   means "if p then q else false"
+|\|\|	|conditional OR	|p \|\| q   means "if p then true else q"
+|!|	NOT	|!p   means "not p"
+
+### Pointers and channels
+|Operator	|Name	|Description
+| ------------- |-------------| -----|
+|&	|address of	|&x   generates a pointer to x
+|*	|pointer indirection	|*x   denotes the variable pointed to by x
+|<-	|receive	|<-ch   is the value received from channel ch
+
+## Ref
+[Operators: complete list](https://yourbasic.org/golang/operators/)
