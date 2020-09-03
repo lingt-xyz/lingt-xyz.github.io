@@ -47,16 +47,39 @@ func main() {
 }
 ```
 
-## Zero values
+## [Zero values](https://golang.org/ref/spec#The_zero_value)
 
 Variables declared without an explicit initial value are given their _zero value_.
+This initialization is done _recursively_, so for instance each element of an array of structs will have its fields zeroed if no value is specified.
 
 The zero value is:
 - `0` for numeric types,
 - `false` for the boolean type, and
 - `""` (the empty string) for strings.
+- `nil` for pointers, functions, interfaces, slices, channels, and maps.
 
+These two simple declarations are equivalent:
 ``` go
+var i int
+var i int = 0
+```
+After
+``` go
+type T struct { i int; f float64; next *T }
+t := new(T)
+```
+the following holds:
+``` go
+t.i == 0
+t.f == 0.0
+t.next == nil
+```
+The same would also be true after
+```go
+var t T
+```
+
+<!-- ``` go
 package main
 
 import "fmt"
@@ -71,7 +94,7 @@ func main() {
 
 // Expected results:
 0 0 false ""
-```
+``` -->
 
 ## Type conversions
 
