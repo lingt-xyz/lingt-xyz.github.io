@@ -19,6 +19,12 @@ title: Go
     * No annotations.
     * No generics.
     * No exceptions.
+4. Other languages:
+    * C: fast, difficult to work with and not safe. Compiling speed, dependencies and runtime errors are vast.
+    * Ruby: safe but it’s slower and has many dependencies, one of them is the interpreter itself.
+    * Java: a virutal machine is needed. Too complex and verbose to write.
+    * Javascript and Node.js: they are wild kids; which are interpreted, weakly-typed and unsafe to work with (although there are some possible directions like TypeScript or compiling directly to Javascript from other safer languages).
+    * Python: slow, weak types.
 
 ## References
 
@@ -29,3 +35,4 @@ title: Go
 - [Style guideline for Go packages](https://rakyll.org/style-packages/)
 - [Logging and instrumentation](https://peter.bourgon.org/go-best-practices-2016/#logging-and-instrumentation)
 - [Go go-to guide](https://yourbasic.org/golang/)
+- [About Go Language — An Overview](https://blog.learngoprogramming.com/about-go-language-an-overview-f0bee143597c)
