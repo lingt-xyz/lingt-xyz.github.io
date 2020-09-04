@@ -55,6 +55,10 @@ func (v *Vertex) Abs() float64 {
 }
 ```
 
+## Interface names
+
+By convention, one-method interfaces are named by the method name plus an -er suffix or similar modification to construct an agent noun: Reader, Writer, Formatter, CloseNotifier etc.
+
 ## Interfaces are implemented implicitly
 
 A type implements an interface by implementing its methods. There is no explicit declaration of intent, no "implements" keyword.

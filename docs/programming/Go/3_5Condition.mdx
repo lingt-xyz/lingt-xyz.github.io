@@ -195,20 +195,32 @@ func main() {
 }
 ```
 
+There is no automatic fall through, but cases can be presented in comma-separated lists.
+
+``` go
+func shouldEscape(c byte) bool {
+    switch c {
+    case ' ', '?', '&', '=', '#', '+', '%':
+        return true
+    }
+    return false
+}
+```
+
 ### Switch evaluation order
 
 Switch cases evaluate cases from top to bottom, stopping when a case succeeds.
 
-\(For example,
+For example,
 
 ```go
 switch i {
-case 0:
-case f():
+	case 0:
+	case f():
 }
 ```
 
- does not call `f` if `i==0`.\)
+ does not call `f` if `i==0`.
 
 ### Switch with no condition
 
