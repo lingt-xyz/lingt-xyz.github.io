@@ -2,10 +2,6 @@
 title: Python
 ---
 
-Python Language, Numpy and Matplotlib Review
-
-<!--more-->
-
 ## Python
 
 ### Variables
@@ -34,7 +30,7 @@ False           # No! There are two different integer objects in memory, each wi
 
 > The result would be different for integers 0..256 because Python tries to save memory by pooling small integers. Likewise for short strings.
 
-### Numbers: `*`, `**`, `/`, `//`
+### Numbers
 
 ```python
 x = 3
@@ -55,6 +51,19 @@ print(y, y + 1, y * 2, y ** 2) # Prints "2.5 3.5 5.0 6.25"
 
 > Note: Python does *NOT* have unary increment (`x++`) or decrement (`x--`) operators.
 
+In interactive mode, the last printed expression is assigned to the variable `_`.
+
+```python
+>>> tax = 12.5 / 100
+>>> price = 100.50
+>>> price * tax
+12.5625
+>>> price + _
+113.0625
+>>> round(_, 2)
+113.06
+```
+
 ### Booleans
 
 ```python
@@ -71,16 +80,65 @@ print(t != f)  # Logical XOR; prints "True"
 
 ### [String](https://docs.python.org/3.7/library/stdtypes.html#string-methods)
 
+Different ways to create strings.
+
+```python
+>>> s = 'hello'      # Make a new variable 's' and make it refer to a string object with value 'hello'
+>>> s = "hello"      # Same thing, with double-quotes
+>>> s = """hello"""  # Same thing, with triple-quotes
+>>> s
+'hello'              # By default Python displays strings with single quotes around them
+>>> print(s)
+hello                # Printing a string does not result in surrounding quotes
+```
+
+Strings can be treated like a sequence of characters:
+
+```python
+>>> s = 'abcd'
+>>> s[2]         # Get the character at index 2 (the third character)
+'c'
+>>> len(s)       # Get the length of the string (the number of characters)
+4
+```
+
+Strings can be concatenated (glued together) with the + operator, and repeated with *:
+
 ```python
 hello = 'hello'    # String literals can use single quotes
 world = "world"    # or double quotes; it does not matter.
-print(hello)       # Prints "hello"
-print(len(hello))  # String length; prints "5"
 hw = hello + ' ' + world  # String concatenation
 print(hw)  # prints "hello world"
-hw12 = '%s %s %d' % (hello, world, 12)  # sprintf style string formatting
-print(hw12)  # prints "hello world 12"
+print(3 * 'un' + 'ium') # 3 times 'un', followed by 'ium'; prints "unununium"
+```
 
+Two or more string literals (i.e. the ones enclosed between quotes) next to each other are automatically concatenated.
+This feature is particularly useful when you want to break long strings.
+
+```python
+print('Py' 'thon') # prints 'Python'
+```
+
+You can get a string representation of most Python objects:
+```python
+>>> x = 123
+>>> str(x)
+'123'
+```
+
+You can also split and join strings together:
+```python
+>>> words = 'Dog versus cat'.split()     # Split a string by whitespace
+>>> words
+['Dog', 'versus', 'cat']                 # The result is a list of string objects
+
+>>> '-'.join(words)                      # Make a string object with value '-' and then call its join()
+'Dog-versus-cat'   
+```
+
+string functions:
+
+```python
 s = "hello"
 print(s.capitalize())  # Capitalize a string; prints "Hello"
 print(s.upper())       # Convert a string to uppercase; prints "HELLO"
@@ -91,10 +149,32 @@ print(s.replace('l', '(ell)'))  # Replace all instances of one substring with an
 print('  world '.strip())  # Strip leading and trailing whitespace; prints "world"
 ```
 
+#### String formatting
+See this [Python string formatting guide](https://pyformat.info) for lots of examples, comparing both "old style" and "new style."
+
+The "old style" string formatting in Python is similar to the printf function in C:
+```python
+>>> name = 'Jack'
+>>> age = 7
+>>> '%s is %d years old' % (name, age)
+'Jack is 7 years old'
+```
+The formatting scheme is similar to the printf function in C, where %s means string, %.2f means "floating point value with 2 decimals of precision," etc.
+
+
 ### [Lists](https://docs.python.org/3.7/tutorial/datastructures.html#more-on-lists)
 
-A list is the Python equivalent of an array, but is resizeable and can contain elements of different types.
+A list is a mutable sequence. It is resizeable and can contain elements of different types.
 
+You should know how to make lists:
+```python
+>>> x = []                   # Make 'x' refer to a new empty list object
+>>> x = list()               # Same as above
+>>> x = [3, 'abc']           # Make 'x' refer to a new list object that has two slots, one referring
+                             # to an integer object and one referring to a string object
+```
+
+You can get and set items by index:
 ```python
 xs = [3, 1, 2]    # Create a list
 print(xs, xs[2])  # Prints "[3, 1, 2] 2"
@@ -105,6 +185,14 @@ xs.append('bar')  # Add a new element to the end of the list
 print(xs)         # Prints "[3, 1, 'foo', 'bar']"
 x = xs.pop()      # Remove and return the last element of the list
 print(x, xs)      # Prints "bar [3, 1, 'foo']"
+```
+
+Lists also support operations like concatenation.
+
+```python
+>>> squares = [1, 4, 9, 16, 25]
+>>> squares + [36, 49, 64, 81, 100]
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 ```
 
 #### Slicing
