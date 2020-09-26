@@ -2,7 +2,7 @@ const math = require("remark-math");
 const katex = require("rehype-katex");
 
 module.exports = {
-  title: 'Ling',
+  title: '密云不雨',
   tagline: 'Notes for everything',
   url: 'https://lingt.xyz/',
   baseUrl: '/',
@@ -158,7 +158,6 @@ module.exports = {
           // It is recommended to set document id as docs home page (`docs/` path).
           //homePageId: 'doc1',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl:
             'https://github.com/lingt-xyz/io/tree/master/',
           remarkPlugins: [math],
@@ -167,7 +166,6 @@ module.exports = {
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl:
             'https://github.com/lingt-xyz/io/tree/master/',
           remarkPlugins: [math],

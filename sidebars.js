@@ -8,7 +8,7 @@ module.exports = {
     PHIL: ['course/PHIL210']
   },
   TA: ['ta/COMP352', 'ta/COMP249'],
-  research: ['research/Dictionary', 'research/MathTax', 'research/Seq2Seq', 'research/KerasLog', 'research/TFLog'],
+  research: ['research/Common_Commands', 'research/Dictionary', 'research/MathTax', 'research/Seq2Seq', 'research/KerasLog', 'research/TFLog'],
   ml: ['ml/Course'],
   container: ['programming/container/Container', 'programming/container/Docker' ],
   go: ['programming/Go/1Why', 'programming/Go/2Hello', 
@@ -38,5 +38,5 @@ module.exports = {
   cplusplus: ['programming/C++/C++', 'programming/C++/Compilation', 'programming/C++/GCC', 'programming/C++/Make'],
   database: ['programming/database/Cassandra_in_Docker'],
   
-  linux: ["linux/Audio", "linux/Bash", "linux/CUPS", "linux/Disk", "linux/Sed", "linux/SFTP", "linux/Tar", "linux/User"]
+  linux: ["linux/Audio", "linux/Bash", "linux/CUPS", "linux/Disk", "linux/Network", "linux/Sed", "linux/SFTP", "linux/Tar", "linux/User"]
 };
