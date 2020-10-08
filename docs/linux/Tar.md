@@ -8,6 +8,7 @@ title: Tar
 - `v`: verbosely show the `.tar` file progress.
 - `f`: use archive file or device ARCHIVE
 - `x`: extract files from an archive
+- `z`: filter the archive through gzip
 - `j`: filter the archive through bzip2
 - `t`: list the contents of an archive
 
