@@ -26,7 +26,7 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/course/INSE6130',
+          to: 'docs/course/INSE6110',
           activeBasePath: 'docs/course',
           label: 'Course',
           position: 'left',
@@ -43,12 +43,12 @@ module.exports = {
           label: 'Research',
           position: 'left',
         },
-        {
-          to: 'docs/ml/Course',
-          activeBasePath: 'docs/ml',
-          label: 'Machine Learning',
-          position: 'left',
-        },
+        // {
+        //   to: 'docs/ml/Course',
+        //   activeBasePath: 'docs/ml',
+        //   label: 'Machine Learning',
+        //   position: 'left',
+        // },
         {
           // to: 'docs/programming/Go',
           // activeBasePath: 'docs/programming',
