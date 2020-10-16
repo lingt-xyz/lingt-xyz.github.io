@@ -5,14 +5,17 @@ title: INSE 6130
 INSE 6130: Operating Systems Security
 
 ## Outline
-* Instructor: [Dr. Amin Ranj Bar](#)
-* Email: amin.ranjbar@concordia.ca
+* Instructor: Prof. Lingyu Wang
+* Website: [INSE6130 2020 Fall](https://users.encs.concordia.ca/~wang/lecture/61302020fall.htm)
+* Email: wang@ciise.concordia.ca
     > Include "INSE 6130" in the subject
 * Office:
-    * EV 3.301
-    * Friday 20:15 – 21:15
+    * Fridays 16:30 - 17:30
 * Coursebook
-  1. [Computer Security. Art and Science (2nd Edition), Authors: M.Bishop, Publisher: Addison-Wesley (2019)](#)
+  1. M.Bishop, Computer Security. Art and Science (2nd Edition), Addison-Wesley 2018.
+* Course Description: 
+> System security, MS Windows security, linux security, unix security, embedded and real-time OS, system reliability, OS security mechanisms, security administration, delegation of authority, group policy design, security configuration, password requirements, security services, protection models, protection levels, protection domains, capabilities, sharing, system kernel security, resource control, secure booting, firewalls and border security, security models and policies, security levels, authentication, confidentiality,
+integrity, access control strategies access matrix, access control list, mandatory, discretionary, monitoring, auditing, accountability, privilege, account security, file system protection, registry security, threat analysis, security attacks, security-hardened operating
 
 ---
 
@@ -24,46 +27,63 @@ INSE 6130: Operating Systems Security
 ### Overview of all perspectives of system security
 
 * Objectives
-    * Confidentiality
+    * Confidentiality (Secrecy)
         * What: keeping data and resources hidden
         * How: encryption
     * Integrity
         * What: data integrity and origin integrity (authentication)
         * How: digital signature and ?
-    * Availability
+    * Availability (Denial of Service)
         * What: enabling access to data and resources
 
 * Classes of Threats
     * Disclosure: snooping (sniffing) -> confidentiality
     * Deception: modification, spoofing (masquerading), repudiation of origin, denial of receipt -> Integrity
     * Disruptoin: modification -> Availability
-    * Usurpation: modification, spoofing, delay, denial of service. It's a combination of all. -> confidentiality, integrity, availability
+    * Usurpation (take control of system): modification, spoofing, delay, denial of service -> confidentiality, integrity, availability
 
-* Policies and mechanisms
-    * Defines "security" for the system: what can do, what cannot do
+* Policies and Mechanisms
+    * Policies define "security" for the system: what can do, what cannot do
+        - Given by natural language, math, special languages
     * Mechanisms enforece policies
-        * Technical or procedural
+        - Technical or procedural
     * OM-AM (by Ravi Sandhu)
-        * Objective: confidentiality
-        * Model: ACM
-        * Architecutre: Client-Server
-    * Ways for achieving security
-        * Prevention
-        * Detection
-        * Recovery
-    * Trust and assumptions
-        * this is underlie all aspects of security
-        * For policies, unambiguously partiion system states, correctly capture security requirements
-        * For mechanisms: assume to ?
-    * Types of Mechanisms
-        * Three cases.
-        * Policy should cover security.
+        * *O*bjective (policy): e.g. confidentiality
+        * *M*odel: A model is an abstract conceptual description of the objective. e.g. ACM
+        * *A*rchitecutre: How to implemente the model. e.g. Client-Server
+        * *M*echanism: Mechanism is a low level implementation. e.g. Encryption
+
+* Ways for achieving security
+    * Prevention
+        - Prevent attacks from violating security policy
+        - Prevention not always work
+    * Detection
+    * Recovery
+        - Stop attack, assess and repair damage
+        - Continue to function correctly even if attack succeeds (e.g. Amazon cannot stop service to recover)
+
+* Trust and assumptions
+    * They underlie all aspects of security
+    * For policies: unambiguously partiion system states, correctly capture security requirements
+    * For mechanisms: assumed to enforce policy, work correctly
+
+* Types of Mechanisms
+    * Three cases
+        - secure
+        - precise
+        - broad: some secure states are not reachable, some reachable states are not secure. This is the most common situation.
+    * Policy should cover security.
 
 * The role of trust, assurance, operational issues, human issues
     * Assurance
-        * Specification
+        * Specification: what is secure
+            - Requirements analysis
+            - Statement of desired functionality
+        * Design
+        * Implementatioin
     * Operational issues
         * Cost-Benefit analysis
+            - Is it cheaper to prevent or to recover
         * Risk analysis
             * Should we protect something
             * How much should we protect is
@@ -76,6 +96,7 @@ INSE 6130: Operating Systems Security
             * Outsiders and insiders
             * Social engineering: get information from person to go further
 
+# TODO how them link together
 ---
 
 ## Access Control Matrix and Foundational Results
