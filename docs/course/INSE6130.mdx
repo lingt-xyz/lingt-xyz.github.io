@@ -96,16 +96,56 @@ integrity, access control strategies access matrix, access control list, mandato
             * Outsiders and insiders
             * Social engineering: get information from person to go further
 
-# TODO how them link together
+* How them tie together
+![Tying Together](/assets/INSE6130/tying.png)
+
 ---
 
-## Access Control Matrix and Foundational Results
+## Access Control Matrix
 
-### ACM: simple yet (most) powerful security model
+> “How do I describe the security of any computer system… mathematically?”
+    - So we have the Access Control Matrix model
+    - Access control is who can do what to whom
+
+### ACM (Access Control Matrix)
+
+> Q: How to describe a system at any given time?
+
+> A: Protection state of a system
+
+1. What is state of a system: Collection of current settings and valus of a system. e.g.: values of memory locations, secondary storage, registers, and other components of an OS
+2. What is protection state of a system: Subset of a state that is relevant to security. e.g.: access control settings (who can do what to whom)
+
+> Q: How to mathematically represent a protection state?
+
+> A: Access cnotrol matrix
+
+1. ACM is a matrix describing rights of subjects over Objectives
+1. ACM is an abstract model
+    - Subject, object, and right could be anything
+    - That's why it's powerful
+
+### Definition of ACM
+
+- Subjects: $$S=\{s_1, \ldots, s_n\}$$
+- Objects: $$O=\{o_1, \ldots, o_m\}$$
+- Rights: $$R=\{r_1, \ldots, r_k\}$$
+- Matrix entries: $$A[s_i, o_j]\subseteq R$$
+- Interpretation: $$A[s_i, o_j]=\{r_x,\ldots, r_y\}$$ means subject $$s_i$$ has rights $$r_x, \dots, r_y$$ over object $$o_j$$
+- Object set always encloses subject set?
+
 ### Transition in ACM
 ### Safety question
 ### HRU result
 
+---
+
+## Foundational Results
+
+> “Can I determine whether Can I determine whether any computer system is computer system is
+secure?” (asked by *H*arrison *R*uzzo and *U*llman)
+    - So we have the HRU result
+    
 ---
 
 ## Access Control Mechanism in UNIX
