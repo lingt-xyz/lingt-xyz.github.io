@@ -12,7 +12,7 @@ INSE 6130: Operating Systems Security
 * Office:
     * Fridays 16:30 - 17:30
 * Coursebook
-  1. M.Bishop, Computer Security. Art and Science (2nd Edition), Addison-Wesley 2018.
+  - M.Bishop, Computer Security. Art and Science (2nd Edition), Addison-Wesley 2018.
 * Course Description: 
 > System security, MS Windows security, linux security, unix security, embedded and real-time OS, system reliability, OS security mechanisms, security administration, delegation of authority, group policy design, security configuration, password requirements, security services, protection models, protection levels, protection domains, capabilities, sharing, system kernel security, resource control, secure booting, firewalls and border security, security models and policies, security levels, authentication, confidentiality,
 integrity, access control strategies access matrix, access control list, mandatory, discretionary, monitoring, auditing, accountability, privilege, account security, file system protection, registry security, threat analysis, security attacks, security-hardened operating
@@ -37,10 +37,10 @@ integrity, access control strategies access matrix, access control list, mandato
         * What: enabling access to data and resources
 
 * Classes of Threats
-    * Disclosure: snooping (sniffing) -> confidentiality
-    * Deception: modification, spoofing (masquerading), repudiation of origin, denial of receipt -> Integrity
-    * Disruptoin: modification -> Availability
-    * Usurpation (take control of system): modification, spoofing, delay, denial of service -> confidentiality, integrity, availability
+    * Disclosure: snooping(sniffing) -> confidentiality
+    * Deception: modification, spoofing (masquerading), repudiation of origin, denial of receipt -> integrity
+    * Disruptoin: modification -> availability
+    * Usurpation(taking control of system): modification, spoofing, delay, denial of service -> confidentiality, integrity, availability
 
 * Policies and Mechanisms
     * Policies define "security" for the system: what can do, what cannot do
@@ -120,24 +120,70 @@ integrity, access control strategies access matrix, access control list, mandato
 
 > A: Access cnotrol matrix
 
-1. ACM is a matrix describing rights of subjects over Objectives
+1. ACM is a matrix describing rights of subjects over objectives
 1. ACM is an abstract model
     - Subject, object, and right could be anything
-    - That's why it's powerful
 
 ### Definition of ACM
+
+|            | $$o_1$$ | $$o_2$$       | $$\ldots$$ | $$o_m$$ | $$s_1$$ | $$s_2$$ | $$\dots$$ | $$s_n$$ |
+|------------|---------|---------------|------------|---------|---------|---------|-----------|---------|
+| $$s_1$$    | $$r_1$$ | $$r_1r_2$$    |            |         | $$r_3$$ |         |           |         |
+| $$s_2$$    |         | $$r_3r_4r_5$$ | $$r_4$$    |         |         |         |           |         |
+| $$\ldots$$ |         |               |            |         |         |         |           |         |
+| $$s_n$$    |         |               |            |         |         |         |           |         |
 
 - Subjects: $$S=\{s_1, \ldots, s_n\}$$
 - Objects: $$O=\{o_1, \ldots, o_m\}$$
 - Rights: $$R=\{r_1, \ldots, r_k\}$$
 - Matrix entries: $$A[s_i, o_j]\subseteq R$$
 - Interpretation: $$A[s_i, o_j]=\{r_x,\ldots, r_y\}$$ means subject $$s_i$$ has rights $$r_x, \dots, r_y$$ over object $$o_j$$
-- Object set always encloses subject set?
+- **Object set always encloses subject set**
 
 ### Transition in ACM
-### Safety question
-### HRU result
 
+- Why transition
+    - The protection state of a system will change
+    - Such change is modeled as ACM state transition
+- Elements of transition
+    - $$X_i$$ : ACM in the starting state
+    - $$X_{i+1}$$: ACM in the ending state
+    - Command $$\tau$$ : the action that causes this state transition
+- Put it together: $$X_i \vdash_{\tau} X_{i+1}$$
+
+#### Primitive Operations
+Primitive Operations are the basic changes you can make to ACM.
+
+- Create/destroy/enter/delete its elements:
+    - create/destroy subject $$s$$
+    - create/destroy object $$o$$
+    - enter/delete $$r$$ into $$A[s, o]$$
+
+#### Special Rights
+
+- Copy
+- Own
+
+#### Command
+Command is a fixed sequence of primitive operations.
+
+- Command with Conditions
+- Mono-operations Command
+- Mono-conditional Command
+
+:::note
+Conditions cannot be negative or connected by "or"
+:::
+
+#### Principle of Attenuation of privilege
+
+- One shouldn't be able to give out rights he/she does not posses except owner.
+- The owner right implies all other rights.
+    - Owner can give itself rights, then give the right to others, and finally delete its rights.
+
+:::tip Question
+Given an ACM and all the allowed commands, how to decide whether a subject will ever posses a right over an object?
+:::
 ---
 
 ## Foundational Results
@@ -145,38 +191,249 @@ integrity, access control strategies access matrix, access control list, mandato
 > “Can I determine whether Can I determine whether any computer system is computer system is
 secure?” (asked by *H*arrison *R*uzzo and *U*llman)
     - So we have the HRU result
-    
+
+### Safety Problem
+:::note
+If a subject who does not initially possess a right $$r$$ can never obtain $$r$$, then the system is safe with respect to $$r$$ (legitimate delegation of $$r$$ are ignored).
+:::
+
+> Q: Can we write a program to decide the safety of any protection system?
+
+> A: Safety problem is undecidable. (Special cases may be decidable)
+
+#### Take-Grant Protection model
+Take-Grant Protection model is a protection system with a specific set of commands. It decidable with a linear time complexity in the size of the system.
+
 ---
 
-## Access Control Mechanism in UNIX
+## Access Control Mechanism
 
-### ACL, Capabilities, RBAC
-### ACL and Capabilities in UNIX and Windows
-### RBAC in Solaris
+ACM is good for theoretical study but bad for implementation.
+
+### Access Control List(ACL)
+
+An ACL stores the non-empty elements of each column with an object.
+
+#TODO
+
+- 'Closed World' assumption
+    - Denied unless explicitly granted
+- Identical rows
+    - Use groups or wildcards to merge them
+- Who can modify ACL? 
+    - Creator of the file ACL or 
+    - who have been granted modify right
+
+
+### Capability Lists (C-List)
+
+Rows or access control matrix stored with subjects.
+
+#TODO
+
+- The key challenge in implmentation is to prevent process/user from altering capabilities.
+    - Kernel space versus User space
+    - Put C-List inKernel space
+
+### ACL versus C-Lists
+
+- Equivalent in theory
+- Differ in efficiency in answering
+    - Which object can be accessed by a given subject? (C-List win)
+    - What subjects can access a given object? (ACL win)
+
+### Role-Based Access Control (RBAC)
+
+ACL/C-List full mapping would be too complicated, so introduce RBAC (Role).
+
+:::info
+Why role? Because rights usually depend on role (job function) instead of idenity.
+:::
+
+
+1. $$\text{RBAC}_{0}$$
+    - Four sets: $$U, R, P, S$$
+    - Two many-to-many relations $$UA, PA$$ (User assignments, Permission assignments)
+        - $$US\subseteq U\times R$$
+        - $$PA\subseteq P\times R$$
+    - $$\text{user}(s)$$: which user does a session $s$ belong to
+    - $$\text{roles}(s)$$: which roles the session $$s$$ has activated
+
+1. $$\text{RBAC}_{1}$$: $$\text{RBAC}_{1}$$ = $$\text{RBAC}_{0}$$ + role hierarchy
+    - If $$r1\leq r2$$ then
+    1. Any user assigned to $$r2$$ can activate $$r1$$
+    1. Activating $$r2$$ gives user the all of $$r1$$'s permissions
+
+1. $$\text{RBAC}_{3}$$: $$\text{RBAC}_{3}$$ = $$\text{RBAC}_{1}$$ + constraints
+    - No **_session_** can activate both TA and student
 
 ---
 
 ## Security Policies and Confidentiality Policies
 
-### Overview of security policy
+Security Plicies are unambiguous statements.
+
+### Define Security Policies
+
+- Positive authorizations with the Closed World assumption
+- Negative authorizations with the Open World assumption
+- A mixture of the two, with conflicts resolution meta-policies
+
+### Security Policty Defines Security
+
+:::note
+Under security policies, a 'secure' system is one that
+1. Only starts from authorized states
+2. Never enters any unauthorized states
+:::
+
+### Types of Security policy
+
+1. Confidentiality policy
+2. Integrity policy
+3. Availability policy
+
+Most applications require combinations of these.
+
+### Types of Access Control Policies
+
+1. Descretionary Access Control (DAC)
+    - Access is based on owner's discretionary
+    - Standard Unix security
+2. Mandatory Access Control (MAC)
+    - System controls accesses and users cannot alter
+
+
+### Lattice
+
+- LUB: least upper bound
+- GLB: greatest lower bound
+- Lattice is a poset whose elements all have unique LUBs and GLBs.
+
+#### Denning's Axioms
+> Security levels form a lattice.
+
+- A security level is a pair (clearance/classification, category)
+
 ### Bell-LaPadula (BLP) model
+
+Objective: Information cannot flow downwards. This implies:
+1. No read up
+2. No write down
+
+The BLP policy has two parts to achieve this goal.
+
+1. Simple Security Policy (Read)
+    - Subject $s$ can read object $o\iff L(s)\geq L(o)$.
+    - This is the "no read up" rule.
+1. *-Property (Write)
+    - Subject $s$ can write object $o\iff L(s)\leq L(o)$.
+    - This is the "no write down" rule.
+
 
 ---
 
 ## Integrity Policies and Hybrid Policies
 
+
+
 ### Biba model
-### Lipner’s model
-### Clark-Wilson model
-### Chinese Wall model
+
+Objective: Information cannot flow upwards. This implies:
+1. No read down
+2. No write up
+
+#### General Formal
+
+- $S$: the set of subjects
+- $O$: the set of Objects
+- $I$: the set of integrity levels
+- $i(s)\in I$: integrity level of $s$ where $s\in S$
+- $i(o)\in I$: integrity level of $o$ where $o\in O$
+- $s\: \underline{r}\: o$: $s$ can read $o$
+- $s\: \underline{w}\: o$: $s$ can write $o$
+- $s\: \underline{x}\: s$: $s$ can execute $s$
+
+#### Strict Integrity Policy
+
+#### Low-Water-Mark Policy
+1. Subject Low-Water-Mark Policy
+1. Object Low-Water-Mark Policy
+
+#### Information Transfer Path
+
+### Combining Biba and BLP
+
+1. What if they are exactly reversed
+1. What if they are exactly the same
+
+### Chinese Wall Policy (Hybird Policy)
+
+- Place non-conflicting objects inside walls
+- Each analyst can only access objects inside a walls
+- History-based access control
+
+#### Organization of Objects
+- Objects
+    - Sanitized objects: Public information that never results in conflicts of interests.
+    - Unsanitized objects: Everyting else
+- Company dataset (CD)
+- Conflict of interest class (COI)
+- One special CD in one special COI for all sanitized objects.
+
+### CW-Simple Security Conditions
+- Initially, a subject can read any CD in any COI
+- Once the subject has read any CD in a COI, he/she can only read 
+    - within the same CD, or
+    - another COI
+
+### CW-*-Property
+A subject $s$ can write to $o$ iff both hold:
+1. $s$ can read $o$
+2. All $s$ can read are 
+    - either within $o$'s CD, 
+    - or sanitized.
 
 ---
 
-## Design principles and Unix Security
+## Design principles
 
 ### Principles of security design
-### User security in UNIX
-### File system security in UNIX
+- Simplicity
+- Restriction
+
+#### Least privilege
+- A subject should be given only those information/privileges necessary to complete its task.
+
+#### Fail-Safe Defaults
+- Default action is to deny access unless access privileges are granted explicitly to a subject.
+- If action fails, it should undo the actions before it terminates.
+
+#### Economy of Mechanism
+- Keep security mechanism as simple as possible.
+
+#### Complete Mediation
+- Check every access, don't cache or rely on previous permissions.
+
+#### Open Design
+- Security should not depend on secrecy of design or implementation.
+
+#### Separation of privilege
+- Rquire multiple conditions/subjects to grant privilge.
+
+#### Least Common Mechanism
+- Mechanisms/resouces should not be shared.
+
+#### Psychological Acceptability
+- Security mechanisms should not add to the difficulty of accessing resource.
+
+
+### UNIX Security
+
+1. UID, `/etc/passwd`
+1. GID, `/etc/group`
+1. The Superuser
+
 
 ---
 

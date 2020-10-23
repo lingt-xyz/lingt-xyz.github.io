@@ -100,6 +100,8 @@ $$\lceil{x}\rceil$$ ```\lceil{x}\rceil ```
 
 $$\lfloor{x}\rfloor$$ ```\lfloor{x}\rfloor ```
 
+$$\underline{x}$$ ```\underline{x} ```
+
 $$\implies$$ ``` \implies ```
 
 $$\iff$$ ``` \iff ```
