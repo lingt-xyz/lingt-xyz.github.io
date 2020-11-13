@@ -260,9 +260,9 @@ Why role? Because rights usually depend on role (job function) instead of idenit
     - $$\text{roles}(s)$$: which roles the session $$s$$ has activated
 
 1. $$\text{RBAC}_{1}$$: $$\text{RBAC}_{1}$$ = $$\text{RBAC}_{0}$$ + role hierarchy
-    - If $$r1\leq r2$$ then
-    1. Any user assigned to $$r2$$ can activate $$r1$$
-    1. Activating $$r2$$ gives user the all of $$r1$$'s permissions
+    - If $$r_1\leq r_2$$ then
+    1. Any user assigned to $$r_2$$ can activate $$r_1$$
+    1. Activating $$r_2$$ gives user the all of $$r_1$$'s permissions
 
 1. $$\text{RBAC}_{3}$$: $$\text{RBAC}_{3}$$ = $$\text{RBAC}_{1}$$ + constraints
     - No **_session_** can activate both TA and student
@@ -334,8 +334,6 @@ The BLP policy has two parts to achieve this goal.
 ---
 
 ## Integrity Policies and Hybrid Policies
-
-
 
 ### Biba model
 
@@ -437,17 +435,84 @@ A subject $s$ can write to $o$ iff both hold:
 
 ---
 
-## Secure Booting
+## Authentication and Identity
 
-### Secure bootstrap architectures and TPM
+### Basic concept
+
+- Authentication: to prove an Identity
+    - Strong authentication
+        - Without transmitting password over Network (then over what?)
+        - Or, multi-_**factor**_ authentication
+            - At least two of the following factors.
+            - If only password and PIN, it's only one factor.
+- Factors
+    - What the user know: password, PIN
+    - What the user has: ID card, ticket
+    - What the user is: figerprint, iris, DNA
+- Attach
+    - Active: password guessing, cracking password hashes, authentication replay, etc.
+    - Passive: password sniffing, etc.
+
+### Password Security
+
+- Basic Model (two stages)
+    - Registration
+    - Login
+- Password storage
+    - Why not plaintext password
+        - The password file could be accessed by insider/outsider
+    - Why not the encrypted password
+        - Server has to store the key. If the key is lost, same problem as plaintext password
+    - Hash (three properties)
+        - One-Way
+        - Fixed-length output
+            - Cannot guess password length
+            - Storage efficiency
+        - [Collision-resistant](https://lingt-xyz.gitbook.io/inse6110/hash-1/hash)
+            - Weak: Given $x$, to find a 2nd-preimage $x'$ where $x'≠x$ such that $h(x')=h(x)$.
+                - Given a password, infeasible to find another password such that their hashes are the same. 
+            - Strong
+                - Most attacks are all about string collision, so passwords are still safe.
+                - But dictionary attacks do.
+- Dictionary Attacks
+    - Two ways
+        - Online
+            - Compile a dictionary of possible passwords, sorted in likelihood of passwords
+            - Try to login with passwords in dictionary
+        - Offline
+            - Download password file from server
+            - Compute hashes of dictionary to try to find a match
+    - Time Memory Tradeoff
+        - Pre-compute all hashes: faster $O(\log{n})$, but need more space $O(n)$
+        - Compute on the fly: slower $O(n)$, but less space $O(1)$
+            - $O(n)$ because cannot do binary search
+        - In-between: time memory tradeoff method
+
+- Time Memory Tradeoff
+    - Assumptions
+        - All passwords are three charachters
+        - All hashes are also three characters
+    - Denote $h^t(abc)=\underbrace{h(h(h\ldots h}_{t}(abc)))$
+    - Compute the table ($m\times (t+1)$)
+
+        | $abc$      | $h(abc)$   | $h(h(abc))$ | $$\ldots$$ | $$\ldots$$ | $h^{t-1}(h(abc))$ | $h^{t}(h(abc))$ |
+        |------------|------------|-------------|------------|------------|-------------------|-----------------|
+        | $abd$      | $h(abd)$   | $h(h(abd))$ | $$\ldots$$ | $$\ldots$$ | $h^{t-1}(h(abd))$ | $h^{t}(h(abd))$ |
+        | $cbd$      | $h(cbd)$   | $h(h(cbd))$ | $$\ldots$$ | $$\ldots$$ | $h^{t-1}(h(cbd))$ | $h^{t}(h(cbd))$ |
+        | $$\ldots$$ | $$\ldots$$ | $$\ldots$$  | $$\ldots$$ | $$\ldots$$ | $$\ldots$$        | $$\ldots$$      |
+        | $$\ldots$$ | $$\ldots$$ | $$\ldots$$  | $$\ldots$$ | $$\ldots$$ | $$\ldots$$        | $$\ldots$$      |
+        | $$foo$$    | $h(foo)$   | $h(h(foo))$ | $$\ldots$$ | $$\ldots$$ | $h^{t-1}(h(foo))$ | $h^{t}(h(foo))$ |
+
+    - Suppose we choose $m\times t \geq {26}^{3}=17000$, say $100\times 170$
+
+### Challenge-Response
+### Biometrics
 
 ---
 
-## Authentication and Identity
+## Secure Booting
 
-### Password security
-### Challenge response
-### Biometrics
+### Secure bootstrap architectures and TPM
 
 ---
 
