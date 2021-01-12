@@ -26,7 +26,7 @@ module.exports = {
       },
       links: [
         {
-          to: 'docs/course/INSE6130',
+          to: 'docs/course/INSE6120',
           activeBasePath: 'docs/course',
           label: 'Course',
           position: 'left',
