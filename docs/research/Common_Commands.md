@@ -34,6 +34,14 @@ title: Common Commands
 - Stop
     - `jupyter notebook stop 3443`
 
+## Jupyter kernel
+- List kernels
+    - `jupyter kernelspec list`
+- Install kernel
+    - `ipython kernel install --user --name=<name of kernel>`
+- Uninstall kernel
+    - `jupyter kernelspec uninstall <name of kernel>`
+
 ## TensorBoard
 
 * `tensorboard --logdir logs/log_dir --bind_all`
