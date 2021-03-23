@@ -8,7 +8,7 @@ title: Common Commands
 
 ## Conda
 
-- List env
+- List envs
     - `conda info --envs`
 - Create env
     - `conda create -n tf_115 python=3.7 tensorflow-gpu=1.15`
@@ -24,6 +24,8 @@ title: Common Commands
     1. `python -m ipykernel install --user --name=tf_220`
 - Remove env
     - `conda remove -n $name --all`
+- List packages in env
+    - `conda list -n tf_200`
 
 ## Jupyter lab
 - List jupyter notebook
