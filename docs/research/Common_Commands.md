@@ -45,7 +45,7 @@ title: Common Commands
 ## TensorBoard
 
 * `tensorboard --logdir logs/log_dir --bind_all`
-* `tensorboard —0logdir logs/log_dir —host 0.0.0.0 —port 6006`
+* `tensorboard —-logdir logs/log_dir —host 0.0.0.0 —port 6006`
 
 ## TensorFlow
 
