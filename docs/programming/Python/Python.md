@@ -469,6 +469,11 @@ $ source .venv/bin/activate             # activate the virtual environment
 (base)$ conda env create -f environment.yml
 ```
 
+- List env: `$ conda info --envs`
+- Remove env: `$ conda remove -n $name --all`
+- List packages: `$ conda list -n $name`
+- Search packages: `$ conda search $package`
+
 ### Nohup
 
 Nohup output to "nohup.out"
