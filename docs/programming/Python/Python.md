@@ -453,7 +453,9 @@ $ source .venv/bin/activate             # activate the virtual environment
 (.venv) $ deactivate                    # deactivate the virtual environment
 ```
 
-### Conda
+---
+
+## Conda
 
 ```bash
 # create env
@@ -474,7 +476,9 @@ $ source .venv/bin/activate             # activate the virtual environment
 - List packages: `$ conda list -n $name`
 - Search packages: `$ conda search $package`
 
-### Nohup
+---
+
+## Nohup
 
 Nohup output to "nohup.out"
 ```bash
