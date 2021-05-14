@@ -453,8 +453,30 @@ $ source .venv/bin/activate             # activate the virtual environment
 (.venv) $ deactivate                    # deactivate the virtual environment
 ```
 
+### Conda
 
-### Packages
+```bash
+# create env
+(base)$ conda create -n py37 python=3.7 numpy=1.20.1 scipy=1.6.2
+
+# activate env
+(base)$ conda activate py37
+
+# export env
+(py37)$ conda env export --from-history | grep -v "^prefix: " > environment.yml
+
+# import env
+(base)$ conda env create -f environment.yml
+```
+
+### Nohup
+
+Nohup output to "nohup.out"
+```bash
+$ nohup python -u ./test.py &
+```
+
+- `-u` flag will force the stdout and stderr streams to be unbuffered
 
 ---
 
