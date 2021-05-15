@@ -31,21 +31,41 @@ The first line indicates the system which program to use to run the file. Use `w
 
 ### Examples
 
-* `ls -l > ls-l.txt`: 
+* `ls -l > ls.txt`: 
     
-    This will redirect the ouput of a program (`ls -l`) to a file (`ls-l.txt`).
+    This will redirect `stdout` of a program (`ls -l`) to a file (`ls.txt`).
 
 * `grep da * 2> grep-errors.txt`
 
-    This will redirect the `stderr` ouput (`2`) of a program (`grep da *`) to a file (`grep-errors.txt`).
+    This will redirect the `stderr`(`2`) of a program (`grep da *`) to a file (`grep-errors.txt`).
 
 * `grep da * 2>&1` 
 
-    This will redirect the `stderr` ouput (`2`) of a program (`grep da *`) to be written to the `stdout`.
+    This will redirect the `stderr`(`2`) of a program (`grep da *`) to be written to the `stdout`(`1`).
 
 * `grep da * 2>1` 
 
-    This will redirect the `stderr` ouput (`2`) of a program (`grep da *`) to a file (`1`).
+    This will redirect the `stderr`(`2`) of a program (`grep da *`) to a file (`1`).
+
+* `ls -l > ls.log 2>&1`
+
+    This will redirect `stdout` of a program (`ls -l`) to a file (`ls.log`) and redirect `stderr`(`2`) to `stdout`(`1`).
+
+* `ls -l &> ls.log`
+
+    This is equivalent to `ls -l > ls.log 2>&1`.
+
+* `ls -l &> ls.log &`
+
+    This is equivalent to `ls -l &> ls.log`, but running in a "subshell". If the current shell is closed, the "subshell" would be closed as well.
+
+* `nohup ls -l > ls.log &`
+
+    This is equivalent to `ls -l &> ls.log &`, but running separately. Closing the current shell would not terminate the program.
+
+* `nohup ls -l &`
+
+    This is equivalent to `nohup ls -l > ls.log &`, but the output is written into `nohup.out` file in the current folder.
 
 * `grep da * > /dev/null `
 

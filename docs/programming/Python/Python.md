@@ -480,13 +480,17 @@ $ source .venv/bin/activate             # activate the virtual environment
 
 ## Nohup
 
-Nohup output to "nohup.out"
+Nohup output to "nohup.out":
 ```bash
 $ nohup python -u ./test.py &
 ```
 
 - `-u` flag will force the stdout and stderr streams to be unbuffered
 
+Nohup output to a file:
+```bash
+$ nohup python -u ./test.py > out.log &
+```
 ---
 
 ## Numpy
