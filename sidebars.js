@@ -38,5 +38,5 @@ module.exports = {
   cplusplus: ['programming/C++/C++', 'programming/C++/Compilation', 'programming/C++/GCC', 'programming/C++/Make'],
   database: ['programming/database/Cassandra_in_Docker'],
   
-  linux: ["linux/Audio", "linux/Bash", "linux/CUPS", "linux/Disk", "linux/File", "linux/Network", "linux/Sed", "linux/SFTP", "linux/Tar", "linux/User"]
+  linux: ["linux/Audio", "linux/Bash", "linux/CUPS", "linux/Disk", "linux/File", "linux/Network", "linux/Sed", "linux/SFTP", "linux/Tar", "linux/User", "linux/Zip"]
 };

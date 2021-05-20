@@ -4,13 +4,13 @@ title: Tar
 
 "tar" stands for tape archive, which is used deal with tape drives backup.
 
-- `c`: create a new `.tar` archive file
-- `v`: verbosely show the `.tar` file progress.
-- `f`: use archive file or device ARCHIVE
-- `x`: extract files from an archive
-- `z`: filter the archive through gzip
-- `j`: filter the archive through bzip2
-- `t`: list the contents of an archive
+- `c`: Create a new `.tar` archive file.
+- `v`: Verbosely show the `.tar` file progress.
+- `f`: Use archive file or device ARCHIVE.
+- `x`: Extract files from an archive.
+- `z`: Filter the archive through gzip.
+- `j`: Filter the archive through bzip2.
+- `t`: List the contents of an archive.
 
 ## Compress
 
