@@ -38,9 +38,7 @@ $ sudo apt install zip
 $ sudo apt install unzip
 ```
 
-- `r`: Travel the directory structure recursively.
 - `d`: An optional directory to which to extract files.
-- `e`: Encrypt the contents of the zip archive using a password which is entered on the terminal in response to a prompt.
 
 
 ## Decompress
