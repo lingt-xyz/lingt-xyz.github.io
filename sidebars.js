@@ -29,6 +29,7 @@ module.exports = {
     'programming/Go/7Dev'
   ],
   python: ['programming/Python/Python', 'programming/Python/Integration_With_PyCharm', 'programming/Python/Jupyter_Lab'],
+  javascript: ['programming/JavaScript/JavaScript', 'programming/JavaScript/ReactJS', 'programming/JavaScript/ReactNative'],
   java: ['programming/Java/1IDE', 'programming/Java/2JDK_JRE', 'programming/Java/3JavaSE_JavaEE', 'programming/Java/4OOP', 
     'programming/Java/5Variable', 'programming/Java/6Operator', 'programming/Java/7ControlFlow', 
     'programming/Java/8Class', 'programming/Java/9Inheritance', 
