@@ -248,7 +248,7 @@ var name = cachedName || (cachedName = getName());
 var allowed = (age > 18) ? 'yes' : 'no';
 ```
 
-### `switch`
+### switch
 
 ```javascript
 switch (action) {
