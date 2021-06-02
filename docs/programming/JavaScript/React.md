@@ -299,3 +299,105 @@ function FormattedDate(props) {
   return <h2>It is {props.date.toLocaleTimeString()}.</h2>;
 }
 ```
+
+## Handling Events
+
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+
+- React events are named using camelCase, rather than lowercase.
+- With JSX you pass a function as the event handler, rather than a string.
+- Cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly.
+
+In HTML:
+
+```javascript
+<button onclick="activateLasers()">
+  Activate Lasers
+</button>
+
+<form onsubmit="console.log('You clicked submit.'); return false">
+  <button type="submit">Submit</button>
+</form>
+```
+
+In React:
+
+```javascript
+<button onClick={activateLasers}>
+  Activate Lasers
+</button>
+
+function Form() {
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log('You clicked submit.');
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+When you define a component using an ES6 class, a common pattern is for an event handler to be a method on the class.
+
+```javascript
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root')
+);
+```
+
+You can use an arrow function in the callback:
+
+```javascript
+class LoggingButton extends React.Component {
+  handleClick() {
+    console.log('this is:', this);
+  }
+
+  render() {
+    // This syntax ensures `this` is bound within handleClick
+    return (
+      <button onClick={() => this.handleClick()}>
+        Click me
+      </button>
+    );
+  }
+}
+```
+
+The problem with this syntax is that a different callback is created each time the LoggingButton renders.
+
+### Passing Arguments to Event Handlers
+
+```javascript
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+```
