@@ -266,8 +266,37 @@ tar -cZf $TGTD$OF $SRCD
 
 ---
 
+## Return value
+
+The return value (status) of a command is stored in the `$?` variable.
+
+```bash
+cmd;
+echo $?;
+```
+
+The return value is called exit status. This value can be used to determine whether a command completed successfully or unsuccessfully. If the command exits successfully, the exit status will be zero, otherwise it will be a nonzero value.
+
+The following script reports the success/failure status of a command:
+
+```bash
+#!/bin/bash 
+#Filename: success_test.sh 
+# Evaluate the arguments on the command line - ie success_test.sh 'ls | grep txt' 
+eval $@ 
+if [ $? -eq 0 ]; 
+then 
+    echo "$CMD executed successfully" 
+else 
+    echo "$CMD terminated unsuccessfully" 
+fi
+```
+
+---
+
 ## References
 
 * [BASH Programming - Introduction HOW-TO](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
 * [What does “ 2>&1 ” mean?](https://stackoverflow.com/questions/818255/in-the-shell-what-does-21-mean)
 * [When is double-quoting necessary?](https://unix.stackexchange.com/questions/68694/when-is-double-quoting-necessary)
+* [Reading the return value (status) of a command](https://www.oreilly.com/library/view/linux-shell-scripting/9781785881985/7d3e28d2-08bf-43d6-a55d-8125446019fe.xhtml)
