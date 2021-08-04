@@ -22,6 +22,10 @@ https://github.com/llvm/llvm-project/releases/tag/llvmorg-6.0.0
 
 ---
 
+## Hardware
+
+Disk 20GB, RAM 16GB.
+
 ## Host environment
 
 ```bash
