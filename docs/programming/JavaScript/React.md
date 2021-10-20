@@ -2,15 +2,11 @@
 title: React
 ---
 
-https://reactjs.org/tutorial/tutorial.html
-
-https://reactjs.org/docs/hello-world.html
-
 ## What Is React?
 
 React is 
 1. a JavaScript library 
-1. for building user interfaces
+1. for building user interfaces (?)
 1. lets you compose complex UIs from small and isolated pieces of code called “components”.
 
 A component 
@@ -401,3 +397,9 @@ The problem with this syntax is that a different callback is created each time t
 <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
 <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
 ```
+
+## References
+
+- https://reactjs.org/tutorial/tutorial.html
+- https://reactjs.org/docs/hello-world.html
+- https://www.youtube.com/watch?v=nTeuhbP7wdE
