@@ -13,7 +13,7 @@ Notes for docker command.
 
 - Create and run a container of an image in an interactive way: `$ docker run -it ubuntu:18.04`
 
-- Create a *new* image from a container’s changes: `$ docker commit $CONTAINER [REPOSITORY[:TAG]]`
+- Create a *new* image from a container’s changes: `$ docker commit $CONTAINER_NAME [REPOSITORY[:TAG]]`
 
 ---
 
@@ -21,7 +21,7 @@ Notes for docker command.
 
 - List all containers: `$ docker ps -a`
 
-- Remove a container: `$ docker rm $CONTAINER`
+- Remove a container: `$ docker rm $CONTAINER_NAME`
 
 ---
 

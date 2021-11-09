@@ -47,7 +47,7 @@ Execute the bash in the docker in an interactive way:
 
 `$ docker exec -it cassandra-example bash`
 
-### In the docker
+### cqlsh
 
 Run `cqlsh` in the docker:
 
@@ -66,6 +66,51 @@ Then we can use `cqlsh` locally.
 `$ docker run -p 9042:9042 --rm --name cassandra-example -d cassandra:3.11.4 -Dcassandra.config=file:////docker/apth/cassandra.yaml`
 
 ---
+
+## cqlsh
+
+- cqlsh version: `$ show version`
+
+### Keyspace
+- `DESC[RIBE] KEYSPACES;`
+- `USE $KEYSPACE_NAME;`
+- `DESC[RIBE] KEYSPACE;`
+- `DESC[RIBE] $KEYSPACE_NAME;`
+
+### Table
+- `DESC[RIBE] TABLES;`
+- `DESC[RIBE] $TABLE_NAME;`
+
+---
+
+## Data Migration
+
+```bash
+# Get cassandra container
+$ docker ps | grep cassandra
+
+docker exec -it ${cassandra_container} cqlsh
+
+cqlsh> show version;
+[cqlsh 5.0.1 | Cassandra 3.11.1 | CQL spec 3.4.4 | Native protocol v4]
+
+cqlsh> USE $KEYSPACE_NAME;
+
+```
+### Export
+
+```bash
+COPY $TABLE_NAME TO '$CSV_FILE_FULL_PATH'
+```
+
+### Import
+
+```bash
+COPY $TABLE_NAME FROM '$CSV_FILE_FULL_PATH'
+```
+
+---
+
 
 ## Debug
 
