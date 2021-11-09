@@ -80,7 +80,7 @@ module.exports = {
               label: 'C++',
             },
             {
-              to: 'docs/programming/database/Cassandra_in_Docker',
+              to: 'docs/programming/database/Cassandra',
               label: 'Database',
             },
           ],
