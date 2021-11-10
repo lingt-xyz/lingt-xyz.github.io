@@ -93,7 +93,7 @@ $ cqlsh -e "DESC SCHEMA" > db_schema.cql
 
 # Import the schema
 $ docker exec -it ${cassandra_container} cqlsh
-$ source user_schema.cql
+$ source `user_schema.cql`
 ```
 
 ## Data Migration
