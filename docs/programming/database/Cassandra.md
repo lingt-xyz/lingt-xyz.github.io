@@ -82,6 +82,19 @@ Then we can use `cqlsh` locally.
 - `DESC[RIBE] $TABLE_NAME;`
 
 ---
+## Schema Migration
+
+```bash
+$ docker exec -it ${cassandra_container} bash
+# Export a keyspace
+$ cqlsh -e "DESC KEYSPACE $KEYSPACE_NAME" > user_schema.cql
+# Export the entire database schema
+$ cqlsh -e "DESC SCHEMA" > db_schema.cql
+
+# Import the schema
+$ docker exec -it ${cassandra_container} cqlsh
+$ source user_schema.cql
+```
 
 ## Data Migration
 
@@ -89,12 +102,12 @@ Then we can use `cqlsh` locally.
 # Get cassandra container
 $ docker ps | grep cassandra
 
-docker exec -it ${cassandra_container} cqlsh
+$ docker exec -it ${cassandra_container} cqlsh
 
-cqlsh> show version;
+$ cqlsh> show version;
 [cqlsh 5.0.1 | Cassandra 3.11.1 | CQL spec 3.4.4 | Native protocol v4]
 
-cqlsh> USE $KEYSPACE_NAME;
+$ cqlsh> USE $KEYSPACE_NAME;
 
 ```
 ### Export
