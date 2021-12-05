@@ -91,6 +91,12 @@ module.exports = {
           label: 'Linux',
           position: 'left',
         },
+        {
+          to: 'docs/philosophy/philosophy101',
+          activeBasePath: 'docs/philosophy',
+          label: 'Philosophy',
+          position: 'left',
+        },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/lingt-xyz/lingt-xyz.github.io',
