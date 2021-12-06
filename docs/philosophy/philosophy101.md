@@ -18,7 +18,8 @@ Philosophy 101
 ### Deductive reasoning
 - From generic to specific
 - Always valid
-- Example: All good apple can be eaten. This is a good apple. It can be eaten.
+- Form: All As are Bs. This is an A, so it is B.
+- Example: All good apple can be eaten. This is a good apple, so it can be eaten.
 
 ---
 
@@ -35,5 +36,6 @@ Philosophy 101
 ### Inductive reasoning
 - From specific to generic
 - Not always valid
-- Example: Those apple. This is a good apple. It can be eaten.
+- Form: Those As are Bs, so all As are Bs.
+- Example: Those apple are red, so all apples are red.
 
