@@ -11,6 +11,7 @@ title: User
     - nothing: `chmod 700 $HOME`
 - Grant `sudo`
     - `usermod -aG sudo $username`
+    - `/sbin/usermod -aG sudo $username`
 
 - Delete a user
     - `deluser $username`
