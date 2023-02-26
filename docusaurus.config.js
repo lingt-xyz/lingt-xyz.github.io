@@ -102,6 +102,11 @@ module.exports = {
           label: 'Philosophy',
           position: 'left',
         },
+        {
+          href: 'https://kitchen.lingt.xyz/',
+          label: '下厨房',
+          position: 'left',
+        },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/lingt-xyz/lingt-xyz.github.io',
